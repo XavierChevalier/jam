@@ -1,7 +1,19 @@
-node_modules
-.DS_Store
+# IDE
+.idea
+
+# Build
 dist
 dist-ssr
-*.local
+
+# NPM
+node_modules
+
+# Cache
+.DS_Store
+.firebase/*.cache
+
+# Logs
 yarn-error.log
-.idea
+
+# Environment files
+*.local
