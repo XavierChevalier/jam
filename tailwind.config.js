@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{vue,js,ts}'],
+  purge: ['./index.html', './src/**/*.{vue,js,ts}'],
   darkMode: 'class',
   fontFamily: {
     sans: ['Noto Sans'],
