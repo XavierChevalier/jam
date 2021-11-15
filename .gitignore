@@ -4,6 +4,7 @@
 # Build
 dist
 dist-ssr
+coverage
 
 # NPM
 node_modules
