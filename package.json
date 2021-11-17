@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@mdi/js": "^6.5.95",
+    "date-fns": "^2.25.0",
     "vue": "^3.2.16"
   },
   "devDependencies": {
