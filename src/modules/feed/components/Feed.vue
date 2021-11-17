@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { mdiHeart } from '@mdi/js'
-  import MDIcon from '@/components/icon/Icon.vue'
+  import Icon from '@/components/icon/Icon.vue'
   import { computed } from 'vue'
   import { localeFormatDistance } from '@/tools/date/Date'
 
@@ -29,9 +29,9 @@
 </script>
 
 <template>
-  <span data-test="author">{{ author }}</span>
-  <span data-test="publicationDate">{{ publicationDateDistance }}</span>
-  <p data-test="content">{{ content }}</p>
-  <MDIcon data-test="heart" :path="mdiHeart"></MDIcon>
-  <span data-test="numberOfLikes">{{ numberOfLikes }}</span>
+  <span>{{ author }}</span>
+  <span>{{ publicationDateDistance }}</span>
+  <p>{{ content }}</p>
+  <Icon :path="mdiHeart"></Icon>
+  <span>{{ numberOfLikes }}</span>
 </template>
