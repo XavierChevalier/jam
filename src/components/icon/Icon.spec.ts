@@ -1,15 +1,6 @@
-import { mount } from '@vue/test-utils'
-import Icon from './Icon.vue'
-import { mdiAlert } from '@mdi/js'
+import { Alert } from '@/components/icon/Icon.stories'
+import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
 
 describe('Icon', () => {
-  it('should render the mdiAlert icon', () => {
-    const wrapper = mount(Icon, {
-      props: {
-        path: mdiAlert,
-      },
-    })
-
-    expect(wrapper.element).toMatchSnapshot()
-  })
+  generateStorybookSnapshotTests({ Alert })
 })

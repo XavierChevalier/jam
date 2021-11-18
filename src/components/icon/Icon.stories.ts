@@ -17,7 +17,7 @@ const Template: Story<typeof Icon> = (args) => ({
   setup() {
     return { args }
   },
-  template: '<Icon size="90" v-bind="args" />',
+  template: '<Icon :size="90" v-bind="args" />',
 })
 
 export const Alert = Template.bind({})

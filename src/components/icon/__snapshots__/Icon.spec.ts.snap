@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon should render the mdiAlert icon 1`] = `
+exports[`Icon should render the "Alert" component correctly 1`] = `
 <svg
-  height="24"
+  height="90"
   viewBox="0 0 24 24"
-  width="24"
+  width="90"
 >
   <path
     d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"
