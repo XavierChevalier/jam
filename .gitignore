@@ -15,6 +15,7 @@ node_modules
 
 # Logs
 yarn-error.log
+build-storybook.log
 
 # Environment files
 *.local

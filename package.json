@@ -9,6 +9,7 @@
     "lint": "eslint --fix --ext .ts,vue --ignore-path .gitignore . && yarn prettier -w -u .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
     "test": "jest src",
+    "chromatic": "npx chromatic",
     "storybook": "start-storybook -p 6006 --ci",
     "storybook:build": "build-storybook"
   },
@@ -33,6 +34,7 @@
     "@vue/test-utils": "^2.0.0-rc.16",
     "autoprefixer": "^9.8.8",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.0.6",
     "eslint": "^8.2.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
