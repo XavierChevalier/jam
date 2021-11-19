@@ -8,15 +8,13 @@ export default {
   component: FeedPost,
 } as Meta
 
-const Template: Story = (args) => ({
+export const Default: Story = (args) => ({
   components: { FeedPost },
   setup() {
     return { args }
   },
   template: '<FeedPost v-bind="args" />',
 })
-
-export const Default = Template.bind({})
 Default.args = {
   author: {
     name: 'TheBaronless',
@@ -26,3 +24,16 @@ Default.args = {
   numberOfLikes: 10,
   publicationDate: new Date(),
 }
+
+export const WithTrack: Story = (args) => ({
+  components: { FeedPost },
+  setup() {
+    return { args }
+  },
+  template: `
+    <FeedPost v-bind="args">
+    <strong>text</strong>
+    </FeedPost>
+  `,
+})
+WithTrack.args = { ...Default.args }

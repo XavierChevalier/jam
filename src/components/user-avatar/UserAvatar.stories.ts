@@ -1,26 +1,26 @@
-import Icon from './Icon.vue'
+import UserAvatar from './UserAvatar.vue'
 import { Story } from '@storybook/vue3'
 import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
-import { mdiAlert } from '@mdi/js'
 
 export default {
-  title: 'Components/Icon',
-  component: Icon,
+  title: 'Components/UserAvatar',
+  component: UserAvatar,
   parameters: {
     layout: 'centered',
   },
 } as Meta
 
 const Template: Story = (args) => ({
-  components: { Icon },
+  components: { UserAvatar },
   setup() {
     return { args }
   },
-  template: '<Icon :size="90" v-bind="args" />',
+  template: '<UserAvatar v-bind="args" />',
 })
 
-export const Alert = Template.bind({})
-Alert.args = {
-  path: mdiAlert,
+export const PicsumPhoto = Template.bind({})
+PicsumPhoto.args = {
+  userName: 'TheBaronless',
+  url: 'https://picsum.photos/50',
 }

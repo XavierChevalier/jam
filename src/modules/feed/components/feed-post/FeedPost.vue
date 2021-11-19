@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { mdiHeart } from '@mdi/js'
-  import Icon from '@/components/icon/Icon.vue'
   import { computed, PropType } from 'vue'
   import { localeFormatDistance } from '@/tools/date/Date'
   import { Author } from '@/modules/feed/models/Author'
+  import UserAvatar from '@/components/user-avatar/UserAvatar.vue'
+  import LikeIcon from '@/components/like-icon/LikeIcon.vue'
 
   const props = defineProps({
     author: {
@@ -31,12 +31,20 @@
 </script>
 
 <template>
-  <div>
-    <img alt="The author avatar" :src="author.avatar" />
-    <span>{{ author.name }}</span>
-    <span>{{ publicationDateDistance }}</span>
-    <p>{{ content }}</p>
-    <Icon :path="mdiHeart"></Icon>
-    <span>{{ numberOfLikes }}</span>
+  <div class="bg-white rounded p-5">
+    <div class="flex">
+      <UserAvatar :user-name="author.name" :url="author.avatar" />
+
+      <div class="flex flex-col pl-5">
+        <span>{{ author.name }}</span>
+        <span class="text-neutral">{{ publicationDateDistance }}</span>
+      </div>
+    </div>
+
+    <p class="mt-5">{{ content }}</p>
+
+    <slot />
+
+    <LikeIcon :counter="numberOfLikes" class="mt-5 justify-end" />
   </div>
 </template>

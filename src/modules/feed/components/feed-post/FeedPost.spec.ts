@@ -1,12 +1,15 @@
 import FeedPost from './FeedPost.vue'
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { Default } from '@/modules/feed/components/FeedPost.stories'
+import {
+  Default,
+  WithTrack,
+} from '@/modules/feed/components/feed-post/FeedPost.stories'
 
 describe('FeedPost', () => {
-  generateStorybookSnapshotTests({ Default })
+  generateStorybookSnapshotTests({ Default, WithTrack })
 
   describe('author validation', () => {
-    const validator = FeedPost.props.author.validator
+    const validator = FeedPost.props.author?.validator
     it('should be defined', () => {
       expect(validator).toBeDefined()
     })

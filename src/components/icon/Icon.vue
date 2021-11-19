@@ -13,6 +13,6 @@
 
 <template>
   <svg :width="size" :height="size" viewBox="0 0 24 24">
-    <path :d="path" />
+    <path :d="path" style="fill: currentColor" />
   </svg>
 </template>
