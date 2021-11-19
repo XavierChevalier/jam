@@ -4,8 +4,7 @@ const sourceNameMapper = {
 }
 
 const styleNameMapper = {
-  '\\.(css|less|scss|sass)$':
-    '<rootDir>/src/assets/styles/__mocks__/styleMock.js',
+  '\\.(css|less|scss|sass)$': '<rootDir>/src/tests/mocks/EmptyObjectMock.js',
 }
 
 module.exports = {
