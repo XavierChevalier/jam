@@ -20,7 +20,7 @@
       // eslint-disable-next-line vue/valid-define-props
       validator: (value) => z.array(z.string()).safeParse(value).success,
     },
-    duration: {
+    durationMs: {
       type: Number,
       required: true,
       // eslint-disable-next-line vue/valid-define-props
@@ -34,5 +34,5 @@
   <span>{{ title }}</span>
   <span v-for="band in bands" :key="band">{{ band }}</span>
   <LikeIcon />
-  <span></span>
+  <span>{{ durationMs }}</span>
 </template>

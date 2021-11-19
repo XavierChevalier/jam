@@ -9,7 +9,8 @@
     author: {
       type: Object as PropType<Author>,
       required: true,
-      validator: (value) => Author.safeParse(value).success, // eslint-disable-line vue/valid-define-props
+      // eslint-disable-next-line vue/valid-define-props
+      validator: (value) => Author.safeParse(value).success,
     },
     content: {
       type: String,

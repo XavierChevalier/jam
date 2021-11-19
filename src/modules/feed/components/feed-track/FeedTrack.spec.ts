@@ -24,7 +24,7 @@ describe('FeedTrack', () => {
       valid: fc.array(fc.string()),
       invalid: fc.array(fcNotString, { minLength: 1 }),
     })
-    .forProperty('duration')
+    .forProperty('durationMs')
     .states({
       valid: fcPositiveNumber,
       invalid: fcNotPositiveNumber,
