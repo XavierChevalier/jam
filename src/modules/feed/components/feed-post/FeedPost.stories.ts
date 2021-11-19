@@ -21,7 +21,8 @@ Default.args = {
     name: 'TheBaronless',
     avatar: 'https://picsum.photos/50',
   },
-  content: 'Lorem ipsum',
+  content:
+    "Salut à tous, j'ai découvert un groupe complètement ouf, dites-moi ce que vous en pensez !",
   numberOfLikes: 10,
   numberOfComments: 15,
   publicationDate: new Date(),

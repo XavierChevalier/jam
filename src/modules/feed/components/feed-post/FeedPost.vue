@@ -38,7 +38,7 @@
 
 <template>
   <div class="bg-white rounded p-5">
-    <div class="flex">
+    <div class="flex items-center">
       <UserAvatar :user-name="author.name" :url="author.avatar" />
 
       <div class="flex flex-col pl-5">

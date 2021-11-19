@@ -21,17 +21,17 @@
 <template>
   <div
     class="
-      w-12
-      h-12
+      w-10
+      h-10
       relative
       after:absolute
-      after:w-14
-      after:h-14
+      after:w-12
+      after:h-12
       after:-top-1
       after:-left-1
       after:rounded-full
       after:border-2
-      after:border-neutral
+      after:border-neutral-light
     "
   >
     <img class="rounded-full w-full h-full" :alt="avatarAlt" :src="url" />
