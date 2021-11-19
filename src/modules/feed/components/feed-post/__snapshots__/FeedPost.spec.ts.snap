@@ -5,10 +5,10 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
   class="bg-white rounded p-5"
 >
   <div
-    class="flex"
+    class="flex items-center"
   >
     <div
-      class="w-12 h-12 relative after:absolute after:w-14 after:h-14 after:-top-1 after:-left-1 after:rounded-full after:border-2 after:border-neutral"
+      class="w-10 h-10 relative after:absolute after:w-12 after:h-12 after:-top-1 after:-left-1 after:rounded-full after:border-2 after:border-neutral-light"
     >
       <img
         alt="The TheBaronless's avatar"
@@ -32,7 +32,7 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
   <p
     class="mt-5"
   >
-    Lorem ipsum
+    Salut à tous, j'ai découvert un groupe complètement ouf, dites-moi ce que vous en pensez !
   </p>
   <!--v-if-->
   <div
@@ -87,10 +87,10 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
   class="bg-white rounded p-5"
 >
   <div
-    class="flex"
+    class="flex items-center"
   >
     <div
-      class="w-12 h-12 relative after:absolute after:w-14 after:h-14 after:-top-1 after:-left-1 after:rounded-full after:border-2 after:border-neutral"
+      class="w-10 h-10 relative after:absolute after:w-12 after:h-12 after:-top-1 after:-left-1 after:rounded-full after:border-2 after:border-neutral-light"
     >
       <img
         alt="The TheBaronless's avatar"
@@ -114,7 +114,7 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
   <p
     class="mt-5"
   >
-    Lorem ipsum
+    Salut à tous, j'ai découvert un groupe complètement ouf, dites-moi ce que vous en pensez !
   </p>
   <div
     class="mt-2"
