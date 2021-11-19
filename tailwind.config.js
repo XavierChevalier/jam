@@ -8,15 +8,15 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      neutral: '#cecece',
+      neutral: '#999999',
       primary: '#03BE68',
       black: {
         light: '#252525',
         DEFAULT: '#000',
       },
       white: {
-        DEFAULT: '#fff',
-        dark: '#f9f9f9',
+        DEFAULT: '#FFF',
+        dark: '#F8F8F8',
       },
     },
   },
