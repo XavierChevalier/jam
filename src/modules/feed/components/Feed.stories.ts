@@ -6,9 +6,9 @@ import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 export default {
   title: 'Feed/Components/Feed',
   component: Feed,
-} as Meta<typeof Feed>
+} as Meta
 
-const Template: Story<typeof Feed> = (args) => ({
+const Template: Story = (args) => ({
   components: { Feed },
   setup() {
     return { args }
@@ -18,7 +18,10 @@ const Template: Story<typeof Feed> = (args) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-  author: 'TheBaronless',
+  author: {
+    name: 'TheBaronless',
+    avatar: 'https://picsum.photos/50',
+  },
   content: 'Lorem ipsum',
   numberOfLikes: 10,
   publicationDate: new Date(),

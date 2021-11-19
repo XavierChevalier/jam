@@ -16,7 +16,8 @@
   "dependencies": {
     "@mdi/js": "^6.5.95",
     "date-fns": "^2.25.0",
-    "vue": "^3.2.16"
+    "vue": "^3.2.16",
+    "zod": "^3.11.6"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

@@ -1,13 +1,15 @@
 <script setup lang="ts">
   import { mdiHeart } from '@mdi/js'
   import Icon from '@/components/icon/Icon.vue'
-  import { computed } from 'vue'
+  import { computed, PropType } from 'vue'
   import { localeFormatDistance } from '@/tools/date/Date'
+  import { Author } from '@/modules/feed/models/Author'
 
   const props = defineProps({
     author: {
-      type: String,
+      type: Object as PropType<Author>,
       required: true,
+      validator: (value) => Author.safeParse(value).success, // eslint-disable-line vue/valid-define-props
     },
     content: {
       type: String,
@@ -29,9 +31,12 @@
 </script>
 
 <template>
-  <span>{{ author }}</span>
-  <span>{{ publicationDateDistance }}</span>
-  <p>{{ content }}</p>
-  <Icon :path="mdiHeart"></Icon>
-  <span>{{ numberOfLikes }}</span>
+  <div>
+    <img alt="The author avatar" :src="author.avatar" />
+    <span>{{ author.name }}</span>
+    <span>{{ publicationDateDistance }}</span>
+    <p>{{ content }}</p>
+    <Icon :path="mdiHeart"></Icon>
+    <span>{{ numberOfLikes }}</span>
+  </div>
 </template>
