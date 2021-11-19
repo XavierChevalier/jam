@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Feed should render correctly 1`] = `
-<div
-  data-v-app=""
->
-  
+exports[`Feed should render the "Default" component correctly 1`] = `
+<div>
+  <img
+    alt="The author avatar"
+    src="https://picsum.photos/50"
+  />
   <span>
     TheBaronless
   </span>
@@ -26,6 +27,5 @@ exports[`Feed should render correctly 1`] = `
   <span>
     10
   </span>
-  
 </div>
 `;
