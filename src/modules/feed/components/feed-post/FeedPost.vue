@@ -45,6 +45,6 @@
 
     <slot />
 
-    <LikeIcon :counter="numberOfLikes" class="mt-5 justify-end" />
+    <LikeIcon show-counter :counter="numberOfLikes" class="mt-5 justify-end" />
   </div>
 </template>

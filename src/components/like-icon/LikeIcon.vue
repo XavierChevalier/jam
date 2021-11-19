@@ -10,7 +10,7 @@
     },
     showCounter: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     counter: {
       type: Number,

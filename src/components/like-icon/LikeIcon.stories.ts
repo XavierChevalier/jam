@@ -20,24 +20,23 @@ const Template: Story = (args) => ({
 })
 
 export const JustUnlikedIcon = Template.bind({})
-JustUnlikedIcon.args = {
-  showCounter: false,
-}
+JustUnlikedIcon.args = {}
 
 export const JustLikedIcon = Template.bind({})
 JustLikedIcon.args = {
   liked: true,
-  showCounter: false,
 }
 
 export const UnlikedIconWithCounter = Template.bind({})
 UnlikedIconWithCounter.args = {
   liked: false,
+  showCounter: true,
   counter: 10,
 }
 
 export const LikedIconWithCounter = Template.bind({})
 LikedIconWithCounter.args = {
   liked: true,
+  showCounter: true,
   counter: 10,
 }

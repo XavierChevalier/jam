@@ -39,7 +39,7 @@ function getUnwrappedElement(wrapper: VueWrapper<ComponentPublicInstance>) {
 }
 
 function generateStorybookSnapshotTest(storyName: StoryName, story: Story) {
-  it(`should render the "${storyName}" component correctly`, () => {
+  test(`[snapshot] should render the "${storyName}" component correctly`, () => {
     const wrapper = mount(createComponentFromStory(story))
 
     expect(getUnwrappedElement(wrapper)).toMatchSnapshot()

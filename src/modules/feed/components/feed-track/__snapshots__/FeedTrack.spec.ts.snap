@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedTrack [snapshot] should render the "Default" component correctly 1`] = `
+<img
+  alt="The track cover"
+  src="https://picsum.photos/50"
+/>
+`;
+
+exports[`FeedTrack should render the "Default" component correctly 1`] = `<div />`;

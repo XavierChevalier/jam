@@ -6,6 +6,11 @@ import {
   LikedIconWithCounter,
   UnlikedIconWithCounter,
 } from '@/components/like-icon/LikeIcon.stories'
+import { generatePropertyValidationTests } from '@/tests/tools/PropsValidator'
+import {
+  fcNotPositiveNumber,
+  fcPositiveNumber,
+} from '@/tests/tools/FastCheckProperties'
 
 describe('LikeIcon', () => {
   generateStorybookSnapshotTests({
@@ -15,36 +20,8 @@ describe('LikeIcon', () => {
     LikedIconWithCounter,
   })
 
-  describe('counter validation', () => {
-    const validator = LikedIcon.props.counter?.validator
-    it('should be defined', () => {
-      expect(validator).toBeDefined()
-    })
-
-    describe.each`
-      description                       | counter
-      ${'With a non positive number'}   | ${-1}
-      ${'With a float positive number'} | ${1.2}
-      ${'With a string'}                | ${"it's just a string"}
-    `('$description', ({ counter }) => {
-      test(`GIVEN ANY invalid counter
-        WHEN we validate it
-        THEN it SHOULD ALWAYS be invalid
-      `, () => {
-        expect(validator(counter)).toBe(false)
-      })
-    })
-
-    describe.each`
-      description                 | counter
-      ${'With a positive number'} | ${10}
-    `('$description', ({ counter }) => {
-      test(`GIVEN ANY valid counter
-        WHEN we validate it
-        THEN it SHOULD ALWAYS be valid
-      `, () => {
-        expect(validator(counter)).toBe(true)
-      })
-    })
+  generatePropertyValidationTests(LikedIcon).forProperty('counter').states({
+    valid: fcPositiveNumber,
+    invalid: fcNotPositiveNumber,
   })
 })
