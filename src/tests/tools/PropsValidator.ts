@@ -2,7 +2,12 @@ import { DefineComponent, Prop } from 'vue'
 import fc, { Arbitrary } from 'fast-check'
 
 type Validator = (value: unknown) => boolean
-type States = { valid: Arbitrary<unknown>; invalid: Arbitrary<unknown> }
+type Seed = { seed: number; path: string }
+type States = {
+  valid: Arbitrary<unknown>
+  invalid: Arbitrary<unknown>
+  invalidSeeds?: Seed[]
+}
 
 function generatePropertyTests(property: Prop<unknown>, validator: Validator) {
   it('should be defined', () => {
@@ -45,7 +50,11 @@ function generatePropertyValidationTest(
     })
 
     test(`GIVEN ANY invalid ${propertyName} WHEN we validate it THEN it SHOULD ALWAYS be invalid`, () => {
-      fc.assert(fc.property(states.invalid, (cover) => !validator(cover)))
+      const property = fc.property(states.invalid, (cover) => !validator(cover))
+      fc.assert(property)
+      if (states.invalidSeeds) {
+        states.invalidSeeds.forEach((seed) => fc.assert(property, seed))
+      }
     })
   })
 }

@@ -23,6 +23,7 @@ Default.args = {
   },
   content: 'Lorem ipsum',
   numberOfLikes: 10,
+  numberOfComments: 15,
   publicationDate: new Date(),
 }
 
@@ -33,7 +34,12 @@ export const WithTrack: Story = (args) => ({
   },
   template: `
     <FeedPost v-bind="args">
-    <FeedTrack title="G.O.A.T." :bands="['Polyphia']" :duration-ms="150_000" cover="https://picsum.photos/50?1"/>
+    <FeedTrack
+        title="G.O.A.T."
+        :bands="['Polyphia']"
+        :duration-ms="150_000"
+        cover="https://picsum.photos/50?1"
+    />
     </FeedPost>
   `,
 })

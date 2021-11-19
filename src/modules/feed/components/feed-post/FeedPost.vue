@@ -4,6 +4,7 @@
   import { Author } from '@/modules/feed/models/Author'
   import UserAvatar from '@/components/user-avatar/UserAvatar.vue'
   import LikeIcon from '@/components/like-icon/LikeIcon.vue'
+  import CommentIcon from '@/components/comment-icon/CommentIcon.vue'
 
   const props = defineProps({
     author: {
@@ -17,6 +18,10 @@
       required: true,
     },
     numberOfLikes: {
+      type: Number,
+      required: true,
+    },
+    numberOfComments: {
       type: Number,
       required: true,
     },
@@ -48,6 +53,9 @@
       <slot />
     </div>
 
-    <LikeIcon show-counter :counter="numberOfLikes" class="mt-5 justify-end" />
+    <div class="flex mt-5 justify-end">
+      <LikeIcon show-counter :counter="numberOfLikes" />
+      <CommentIcon show-counter :counter="numberOfComments" class="ml-5" />
+    </div>
   </div>
 </template>

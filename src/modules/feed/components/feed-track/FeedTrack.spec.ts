@@ -18,6 +18,7 @@ describe('FeedTrack', () => {
     .states({
       valid: fc.webUrl(),
       invalid: fcNotUrl,
+      invalidSeeds: [{ seed: -355476508, path: '9:3:2:4:5:13' }],
     })
     .forProperty('bands')
     .states({

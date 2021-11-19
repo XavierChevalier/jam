@@ -11,7 +11,7 @@ export const fcNotUrl = fc.oneof(
   fc.date(),
   fc.boolean(),
   fc.falsy(),
-  fc.string()
+  fc.string().filter((value) => !/^[A-Z]:/.test(value)) // Prevent resource URL
 )
 export const fcPositiveNumber = fc.integer({ min: 0 })
 export const fcNotPositiveNumber = fc.oneof(
