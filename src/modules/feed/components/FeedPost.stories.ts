@@ -1,19 +1,19 @@
-import Feed from './Feed.vue'
+import FeedPost from './FeedPost.vue'
 import { Story } from '@storybook/vue3'
 import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 
 export default {
-  title: 'Feed/Components/Feed',
-  component: Feed,
+  title: 'Feed/Components/FeedPost',
+  component: FeedPost,
 } as Meta
 
 const Template: Story = (args) => ({
-  components: { Feed },
+  components: { FeedPost },
   setup() {
     return { args }
   },
-  template: '<Feed v-bind="args" />',
+  template: '<FeedPost v-bind="args" />',
 })
 
 export const Default = Template.bind({})
