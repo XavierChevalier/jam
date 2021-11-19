@@ -22,9 +22,9 @@
 </script>
 
 <template>
-  <span class="flex">
+  <span class="flex text-neutral">
     <Icon
-      :class="liked ? 'text-primary' : 'text-neutral'"
+      :class="{ 'text-primary': liked }"
       :path="liked ? mdiHeart : mdiHeartOutline"
     />
     <span v-if="showCounter" class="ml-2">{{ counter }}</span>

@@ -33,9 +33,17 @@
 </script>
 
 <template>
-  <img :src="cover" alt="The track cover" />
-  <span>{{ title }}</span>
-  <span v-for="band in bands" :key="band">{{ band }}</span>
-  <LikeIcon />
-  <span>{{ duration }}</span>
+  <div class="bg-white-dark rounded p-2 flex">
+    <img class="rounded w-16 h-16" :src="cover" alt="The track cover" />
+
+    <div class="flex flex-col ml-2 leading-tight justify-center">
+      <span class="font-bold">{{ title }}</span>
+      <span v-for="band in bands" :key="band">{{ band }}</span>
+    </div>
+
+    <div class="flex self-center ml-auto">
+      <LikeIcon class="text-black-light" />
+      <span class="ml-3">{{ duration }}</span>
+    </div>
+  </div>
 </template>

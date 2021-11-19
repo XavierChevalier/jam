@@ -1,4 +1,5 @@
 import FeedPost from './FeedPost.vue'
+import FeedTrack from '@/modules/feed/components/feed-track/FeedTrack.vue'
 import { Story } from '@storybook/vue3'
 import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
@@ -26,13 +27,13 @@ Default.args = {
 }
 
 export const WithTrack: Story = (args) => ({
-  components: { FeedPost },
+  components: { FeedPost, FeedTrack },
   setup() {
     return { args }
   },
   template: `
     <FeedPost v-bind="args">
-    <strong>text</strong>
+    <FeedTrack title="G.O.A.T." :bands="['Polyphia']" :duration-ms="150_000" cover="https://picsum.photos/50?1"/>
     </FeedPost>
   `,
 })

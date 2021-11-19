@@ -44,7 +44,9 @@
 
     <p class="mt-5">{{ content }}</p>
 
-    <slot />
+    <div v-if="!!$slots.default" class="mt-2">
+      <slot />
+    </div>
 
     <LikeIcon show-counter :counter="numberOfLikes" class="mt-5 justify-end" />
   </div>
