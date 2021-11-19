@@ -19,5 +19,5 @@ Default.args = {
   cover: 'https://picsum.photos/50',
   title: 'G.O.A.T.',
   bands: ['Polyphia'],
-  durationMs: 150,
+  durationMs: 125_000,
 }

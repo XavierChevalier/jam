@@ -1,9 +1,10 @@
 <script setup lang="ts">
   import { z } from 'zod'
-  import { PropType } from 'vue'
+  import { computed, PropType } from 'vue'
   import LikeIcon from '@/components/like-icon/LikeIcon.vue'
+  import { formatDuration } from '@/tools/date/FormatDuration'
 
-  defineProps({
+  const props = defineProps({
     cover: {
       type: String,
       required: true,
@@ -27,6 +28,8 @@
       validator: (value) => z.number().gte(0).safeParse(value).success,
     },
   })
+
+  const duration = computed(() => formatDuration(props.durationMs))
 </script>
 
 <template>
@@ -34,5 +37,5 @@
   <span>{{ title }}</span>
   <span v-for="band in bands" :key="band">{{ band }}</span>
   <LikeIcon />
-  <span>{{ durationMs }}</span>
+  <span>{{ duration }}</span>
 </template>
