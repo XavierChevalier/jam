@@ -5,6 +5,8 @@
   import UserAvatar from '@/components/user-avatar/UserAvatar.vue'
   import LikeIcon from '@/components/like-icon/LikeIcon.vue'
   import CommentIcon from '@/components/comment-icon/CommentIcon.vue'
+  import Icon from '@/components/icon/Icon.vue'
+  import { mdiDotsVertical } from '@mdi/js'
 
   const props = defineProps({
     author: {
@@ -37,7 +39,7 @@
 </script>
 
 <template>
-  <div class="bg-white rounded p-5">
+  <div class="p-5 bg-white rounded group">
     <div class="flex items-center">
       <UserAvatar :user-name="author.name" :url="author.avatar" />
 
@@ -45,6 +47,17 @@
         <span>{{ author.name }}</span>
         <span class="text-neutral">{{ publicationDateDistance }}</span>
       </div>
+
+      <Icon
+        class="
+          ml-auto
+          opacity-0
+          transition-opacity
+          text-neutral
+          group-hover:opacity-100
+        "
+        :path="mdiDotsVertical"
+      />
     </div>
 
     <p class="mt-5">{{ content }}</p>
@@ -53,7 +66,7 @@
       <slot />
     </div>
 
-    <div class="flex mt-5 justify-end">
+    <div class="flex justify-end mt-5">
       <LikeIcon show-counter :counter="numberOfLikes" />
       <CommentIcon show-counter :counter="numberOfComments" class="ml-5" />
     </div>
