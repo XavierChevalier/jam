@@ -12,7 +12,10 @@ module.exports = {
         light: '#CECECE',
         DEFAULT: '#999999',
       },
-      primary: '#03BE68',
+      primary: {
+        DEFAULT: '#03BE68',
+        light: '#cef1df',
+      },
       black: {
         light: '#252525',
         DEFAULT: '#000',
