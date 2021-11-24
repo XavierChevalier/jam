@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DockedPlayer [snapshot] should render the "Default" component correctly 1`] = `
+exports[`PlayerDocked [snapshot] should render the "Default" component correctly 1`] = `
 <div>
   <img
     alt="The track cover of ANSI.SYS • MASTER BOOT RECORD"
@@ -20,14 +20,6 @@ exports[`DockedPlayer [snapshot] should render the "Default" component correctly
     MASTER BOOT RECORD
   </span>
   
-  <div
-    class="h-1 bg-primary-light"
-  >
-    <div
-      class="h-full rounded-full bg-primary"
-      style="width: 50%;"
-    />
-  </div>
   <span
     class="flex text-neutral text-black"
   >
@@ -54,10 +46,19 @@ exports[`DockedPlayer [snapshot] should render the "Default" component correctly
       style="fill: currentColor;"
     />
   </svg>
+  <!--v-if-->
+  <div
+    class="h-1 bg-primary-light"
+  >
+    <div
+      class="h-full rounded-full bg-primary"
+      style="width: 50%;"
+    />
+  </div>
 </div>
 `;
 
-exports[`DockerPlayer [snapshot] should render the "Default" component correctly 1`] = `
+exports[`PlayerDocked [snapshot] should render the "ListeningOnDesktop" component correctly 1`] = `
 <div>
   <img
     alt="The track cover of ANSI.SYS • MASTER BOOT RECORD"
@@ -77,14 +78,6 @@ exports[`DockerPlayer [snapshot] should render the "Default" component correctly
     MASTER BOOT RECORD
   </span>
   
-  <div
-    class="h-1 bg-primary-light"
-  >
-    <div
-      class="h-full rounded-full bg-primary"
-      style="width: 50%;"
-    />
-  </div>
   <span
     class="flex text-neutral text-black"
   >
@@ -111,5 +104,14 @@ exports[`DockerPlayer [snapshot] should render the "Default" component correctly
       style="fill: currentColor;"
     />
   </svg>
+  <div />
+  <div
+    class="h-1 bg-primary-light"
+  >
+    <div
+      class="h-full rounded-full bg-primary"
+      style="width: 50%;"
+    />
+  </div>
 </div>
 `;

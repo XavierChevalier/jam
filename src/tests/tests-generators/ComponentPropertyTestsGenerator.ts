@@ -1,13 +1,22 @@
-import { Prop } from 'vue'
+import { PropType } from 'vue'
 import { TestsGeneratorContainer } from '@/tests/tests-generators/TestsGeneratorContainer'
 import { TestsGenerator } from '@/tests/tests-generators/TestsGenerator'
+
+// From "node_modules/@vue/runtime-core/dist/runtime-core.d.ts"
+type ValidatorFunction<T = unknown> = (value: T) => boolean
+type PropOptions<T = unknown> = Readonly<{
+  type?: PropType<T>
+  required?: boolean
+  default?: T | null | undefined | (() => T | null | undefined)
+  validator?: ValidatorFunction<T>
+}>
 
 export class PropertyTestsGenerator<T> implements TestsGenerator {
   private readonly testsContainer = new TestsGeneratorContainer()
 
   constructor(
     private readonly propertyName: string,
-    private readonly propertyDefinition: Prop<unknown>
+    private readonly propertyDefinition: PropOptions
   ) {}
 
   itShouldBeDefined() {
@@ -19,10 +28,53 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
     return this
   }
 
+  itShouldBeTypeOf<T>(type: PropType<T>) {
+    this.testsContainer.addTest('should be type of', () => {
+      expect(this.propertyDefinition.type).toBe(type)
+    })
+
+    return this
+  }
+
+  itShouldBeRequired() {
+    this.testsContainer.addTest('should be required', () => {
+      expect(this.propertyDefinition.required).toBe(true)
+    })
+
+    return this
+  }
+
+  itShouldNotBeRequired() {
+    this.testsContainer.addTest('should not be required', () => {
+      expect(this.propertyDefinition.required).toBe(false)
+    })
+
+    return this
+  }
+
+  itShouldHaveADefaultValue() {
+    this.testsContainer.addTest('should have a default value', () => {
+      const defaultValue =
+        typeof this.propertyDefinition.default === 'function'
+          ? typeof this.propertyDefinition.default()
+          : typeof this.propertyDefinition.default
+      expect(['string', 'boolean', 'number', 'object']).toContain(defaultValue)
+    })
+
+    return this
+  }
+
+  itShouldNotHaveADefaultValue() {
+    this.testsContainer.addTest('should not have a default value', () => {
+      expect(this.propertyDefinition.default).toBeUndefined()
+    })
+
+    return this
+  }
+
   itShouldHaveAValidatorFunction() {
     this.testsContainer.addTest('should have a validator', () => {
       const validator = this.getPropertyValidator()
-      expect(validator).toBeDefined()
       expect(typeof validator).toBe('function')
     })
 
@@ -33,7 +85,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
     this.testsContainer.addTest(
       `GIVEN ANY valid ${this.propertyName} WHEN we validate it THEN it SHOULD ALWAYS be valid`,
       () => {
-        const validator = this.getPropertyValidator()
+        const validator = this.getPropertyValidator() as ValidatorFunction
         expect(validator(propertyValue)).toBe(true)
       }
     )
@@ -45,7 +97,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
     this.testsContainer.addTest(
       `GIVEN ANY ${this.propertyName} with ${description} WHEN we validate it THEN it SHOULD ALWAYS be invalid`,
       () => {
-        const validator = this.getPropertyValidator()
+        const validator = this.getPropertyValidator() as ValidatorFunction
         expect(validator(propertyValue)).toBe(false)
       }
     )
@@ -54,9 +106,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   private getPropertyValidator() {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    return this.propertyDefinition?.validator
+    return this.propertyDefinition.validator
   }
 
   generateTests() {

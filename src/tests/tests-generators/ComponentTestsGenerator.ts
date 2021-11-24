@@ -10,7 +10,7 @@ export class ComponentTestsGenerator implements TestsGenerator {
   constructor(private readonly component: DefineComponent) {}
 
   itShouldBeDefined() {
-    this.testsContainer.addTest('should be defined', () =>
+    this.testsContainer.addTest('component should be defined', () =>
       expect(this.component).toBeDefined()
     )
 
@@ -20,7 +20,7 @@ export class ComponentTestsGenerator implements TestsGenerator {
   property<T = unknown>(propertyName: string) {
     const propertyTestsGenerator = new PropertyTestsGenerator<T>(
       propertyName,
-      this.component.props[propertyName]
+      this.component?.props?.[propertyName]
     )
 
     this.propertyTests.push(propertyTestsGenerator)

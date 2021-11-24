@@ -8,6 +8,7 @@
   import { mdiPlayOutline } from '@mdi/js'
   import TrackCover from '@/modules/track/components/TrackCover.vue'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
+  import PlayerRemoteListeningDevice from '@/modules/player/components/PlayerRemoteListeningDevice.vue'
 
   defineProps({
     track: {
@@ -15,6 +16,11 @@
       required: true,
       // eslint-disable-next-line vue/valid-define-props
       validator: isPropertyValid(Track),
+    },
+    remoteListeningDevice: {
+      type: String,
+      required: false,
+      default: null,
     },
   })
 </script>
@@ -25,8 +31,12 @@
     <span>{{ track.title }}</span>
     <DotSeparator />
     <span v-for="band in track.bands" :key="band">{{ band }}</span>
-    <PlayerProgressBar :progress="50" />
     <IconLike class="text-black" />
     <Icon :path="mdiPlayOutline" />
+    <PlayerRemoteListeningDevice
+      v-if="remoteListeningDevice"
+      :remote-device-name="remoteListeningDevice"
+    />
+    <PlayerProgressBar :progress="50" />
   </div>
 </template>
