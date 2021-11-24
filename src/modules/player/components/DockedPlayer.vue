@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import { PropType } from 'vue'
   import { Track } from '@/modules/track/models/Track'
-  import DotSeparator from '@/components/dot-separator/DotSeparator.vue'
+  import DotSeparator from '@/components/DotSeparator.vue'
   import PlayerProgressBar from '@/modules/player/components/PlayerProgressBar.vue'
-  import LikeIcon from '@/components/like-icon/LikeIcon.vue'
-  import Icon from '@/components/icon/Icon.vue'
+  import IconLike from '@/components/IconLike.vue'
+  import Icon from '@/components/Icon.vue'
   import { mdiPlayOutline } from '@mdi/js'
   import TrackCover from '@/modules/track/components/TrackCover.vue'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
@@ -26,7 +26,7 @@
     <DotSeparator />
     <span v-for="band in track.bands" :key="band">{{ band }}</span>
     <PlayerProgressBar :progress="50" />
-    <LikeIcon class="text-black" />
+    <IconLike class="text-black" />
     <Icon :path="mdiPlayOutline" />
   </div>
 </template>

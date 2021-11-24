@@ -1,15 +1,12 @@
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import CommentIcon from './CommentIcon.vue'
-import {
-  CommentIconWithCounter,
-  JustCommentIcon,
-} from '@/components/comment-icon/CommentIcon.stories'
+import IconComment from './IconComment.vue'
+import { IconCommentWithCounter, JustIconComment, } from '@/components/IconComment.stories'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 
-describe('CommentIcon', () => {
-  generateStorybookSnapshotTests({ JustCommentIcon, CommentIconWithCounter })
+describe('IconComment', () => {
+  generateStorybookSnapshotTests({ JustIconComment, IconCommentWithCounter })
 
-  new ComponentTestsGenerator(CommentIcon)
+  new ComponentTestsGenerator(IconComment)
     .itShouldBeDefined()
     .property<number>('counter')
     .itShouldBeDefined()

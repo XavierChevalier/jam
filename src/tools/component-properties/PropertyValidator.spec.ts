@@ -22,10 +22,7 @@ describe('PropertyValidator', () => {
       description                                                | schema                                                  | input
       ${'with negative number'}                                  | ${number().required().positive()}                       | ${-1}
       ${'with undefined'}                                        | ${number().required().positive()}                       | ${undefined}
-      ${'with extra key in strict mode'} | ${object().shape({ a: string() }).noUnknown().strict()} | ${{
-  a: 'test',
-  extraKey: 'test',
-}}
+      ${'with extra key in strict mode'}                         | ${object().shape({ a: string() }).noUnknown().strict()} | ${{ a: 'test', extraKey: 'test' }}
       ${'with extra key with circular reference in strict mode'} | ${object().shape({ a: string() }).noUnknown().strict()} | ${extraKeyWithCircularReference}
     `('$description', ({ schema, input }) => {
       test('GIVEN ANY schema and invalid input data WHEN we validate THEN it SHOULD ALWAYS be invalid', () => {

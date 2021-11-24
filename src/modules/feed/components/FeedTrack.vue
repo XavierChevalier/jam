@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { computed, PropType } from 'vue'
-  import LikeIcon from '@/components/like-icon/LikeIcon.vue'
+  import IconLike from '@/components/IconLike.vue'
   import { formatDuration } from '@/tools/date/FormatDuration'
   import { Track } from '@/modules/track/models/Track'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
@@ -27,7 +27,7 @@
     </div>
 
     <div class="flex self-center ml-auto">
-      <LikeIcon class="text-black-light" />
+      <IconLike class="text-black-light" />
       <span class="ml-3">{{ trackDuration }}</span>
     </div>
   </div>

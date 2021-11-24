@@ -1,14 +1,10 @@
 <script setup lang="ts">
-  import { mdiHeart, mdiHeartOutline } from '@mdi/js'
-  import Icon from '@/components/icon/Icon.vue'
-  import { number } from 'yup'
+  import { mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'
+  import Icon from '@/components/Icon.vue'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
+  import { number } from 'yup'
 
   defineProps({
-    liked: {
-      type: Boolean,
-      default: false,
-    },
     showCounter: {
       type: Boolean,
       default: false,
@@ -24,10 +20,7 @@
 
 <template>
   <span class="flex text-neutral">
-    <Icon
-      :class="{ 'text-primary': liked }"
-      :path="liked ? mdiHeart : mdiHeartOutline"
-    />
+    <Icon :path="mdiSpeechOutline" />
     <span v-if="showCounter" class="ml-2">{{ counter }}</span>
   </span>
 </template>

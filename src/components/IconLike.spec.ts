@@ -1,14 +1,14 @@
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import LikedIcon from './LikeIcon.vue'
+import LikedIcon from './IconLike.vue'
 import {
   JustLikedIcon,
   JustUnlikedIcon,
   LikedIconWithCounter,
   UnlikedIconWithCounter,
-} from '@/components/like-icon/LikeIcon.stories'
+} from '@/components/IconLike.stories'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 
-describe('LikeIcon', () => {
+describe('IconLike', () => {
   generateStorybookSnapshotTests({
     JustUnlikedIcon,
     JustLikedIcon,

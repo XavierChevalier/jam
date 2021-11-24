@@ -1,5 +1,5 @@
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { PicsumPhoto } from '@/components/user-avatar/UserAvatar.stories'
+import { PicsumPhoto } from '@/components/UserAvatar.stories'
 import UserAvatar from './UserAvatar.vue'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 

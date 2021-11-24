@@ -2,10 +2,10 @@
   import { computed, PropType } from 'vue'
   import { localeFormatDistance } from '@/tools/date/Date'
   import { Author } from '@/modules/feed/models/Author'
-  import UserAvatar from '@/components/user-avatar/UserAvatar.vue'
-  import LikeIcon from '@/components/like-icon/LikeIcon.vue'
-  import CommentIcon from '@/components/comment-icon/CommentIcon.vue'
-  import Icon from '@/components/icon/Icon.vue'
+  import UserAvatar from '@/components/UserAvatar.vue'
+  import IconLike from '@/components/IconLike.vue'
+  import IconComment from '@/components/IconComment.vue'
+  import Icon from '@/components/Icon.vue'
   import { mdiDotsVertical } from '@mdi/js'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
 
@@ -68,8 +68,8 @@
     </div>
 
     <div class="flex justify-end mt-5">
-      <LikeIcon show-counter :counter="numberOfLikes" />
-      <CommentIcon show-counter :counter="numberOfComments" class="ml-5" />
+      <IconLike show-counter :counter="numberOfLikes" />
+      <IconComment show-counter :counter="numberOfComments" class="ml-5" />
     </div>
   </div>
 </template>

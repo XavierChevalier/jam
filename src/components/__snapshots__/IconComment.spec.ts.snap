@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CommentIcon [snapshot] should render the "CommentIconWithCounter" component correctly 1`] = `
+exports[`IconComment [snapshot] should render the "IconCommentWithCounter" component correctly 1`] = `
 <span
   class="flex text-neutral"
 >
@@ -23,7 +23,7 @@ exports[`CommentIcon [snapshot] should render the "CommentIconWithCounter" compo
 </span>
 `;
 
-exports[`CommentIcon [snapshot] should render the "JustCommentIcon" component correctly 1`] = `
+exports[`IconComment [snapshot] should render the "JustIconComment" component correctly 1`] = `
 <span
   class="flex text-neutral"
 >

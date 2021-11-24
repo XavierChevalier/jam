@@ -1,5 +1,5 @@
 import Icon from './Icon.vue'
-import { Alert, SpeechOutline } from '@/components/icon/Icon.stories'
+import { Alert, SpeechOutline } from '@/components/Icon.stories'
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import { MdiExtra, mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'
