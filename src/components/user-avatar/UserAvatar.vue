@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import { z } from 'zod'
   import { computed } from 'vue'
+  import { string } from 'yup'
+  import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
 
   const props = defineProps({
     userName: {
@@ -11,7 +12,7 @@
       type: String,
       required: true,
       // eslint-disable-next-line vue/valid-define-props
-      validator: (value) => z.string().url().safeParse(value).success,
+      validator: isPropertyValid(string().required().url()),
     },
   })
 

@@ -7,13 +7,14 @@
   import CommentIcon from '@/components/comment-icon/CommentIcon.vue'
   import Icon from '@/components/icon/Icon.vue'
   import { mdiDotsVertical } from '@mdi/js'
+  import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
 
   const props = defineProps({
     author: {
       type: Object as PropType<Author>,
       required: true,
       // eslint-disable-next-line vue/valid-define-props
-      validator: (value) => Author.safeParse(value).success,
+      validator: isPropertyValid(Author),
     },
     content: {
       type: String,

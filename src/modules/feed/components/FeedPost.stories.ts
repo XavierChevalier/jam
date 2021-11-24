@@ -1,11 +1,11 @@
 import FeedPost from './FeedPost.vue'
-import FeedTrack from '@/modules/feed/components/feed-track/FeedTrack.vue'
+import FeedTrack from '@/modules/feed/components/FeedTrack.vue'
 import { Story } from '@storybook/vue3'
 import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 
 export default {
-  title: 'Feed/Components/FeedPost',
+  title: 'Feed/FeedPost',
   component: FeedPost,
 } as Meta
 
@@ -36,10 +36,12 @@ export const WithTrack: Story = (args) => ({
   template: `
     <FeedPost v-bind="args">
     <FeedTrack
-        title="G.O.A.T."
-        :bands="['Polyphia']"
-        :duration-ms="150_000"
-        cover="https://picsum.photos/50?1"
+      :track="{
+        title: 'G.O.A.T.',
+        bands: ['Polyphia'],
+        durationMs: 150_000,
+        cover: 'https://picsum.photos/50?1'
+      }"
     />
     </FeedPost>
   `,

@@ -1,13 +1,14 @@
 <script setup lang="ts">
   import { PropType } from 'vue'
   import { MdiExtra } from '@/assets/images/icons/MdiExtra'
+  import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
 
   defineProps({
     path: {
       type: [String, Object] as PropType<MdiExtra>,
       required: true,
       // eslint-disable-next-line vue/valid-define-props
-      validator: (value: MdiExtra) => MdiExtra.safeParse(value).success,
+      validator: isPropertyValid(MdiExtra),
     },
     size: {
       type: Number,

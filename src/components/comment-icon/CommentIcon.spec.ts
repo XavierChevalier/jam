@@ -4,17 +4,17 @@ import {
   CommentIconWithCounter,
   JustCommentIcon,
 } from '@/components/comment-icon/CommentIcon.stories'
-import { generatePropertyValidationTests } from '@/tests/tools/PropsValidator'
-import {
-  fcNotPositiveNumber,
-  fcPositiveNumber,
-} from '@/tests/tools/FastCheckProperties'
+import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 
 describe('CommentIcon', () => {
   generateStorybookSnapshotTests({ JustCommentIcon, CommentIconWithCounter })
 
-  generatePropertyValidationTests(CommentIcon).forProperty('counter').states({
-    valid: fcPositiveNumber,
-    invalid: fcNotPositiveNumber,
-  })
+  new ComponentTestsGenerator(CommentIcon)
+    .itShouldBeDefined()
+    .property<number>('counter')
+    .itShouldBeDefined()
+    .itShouldHaveAValidatorFunction()
+    .itShouldSuccessWith(0)
+    .itShouldSuccessWith(10)
+    .itShouldFailWith('negative number', -1)
 })

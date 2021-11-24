@@ -2,7 +2,7 @@
 
 exports[`FeedPost [snapshot] should render the "Default" component correctly 1`] = `
 <div
-  class="bg-white rounded p-5"
+  class="p-5 bg-white rounded group"
 >
   <div
     class="flex items-center"
@@ -28,6 +28,17 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
         less than a minute ago
       </span>
     </div>
+    <svg
+      class="ml-auto opacity-0 transition-opacity text-neutral group-hover:opacity-100"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path
+        d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
+        style="fill: currentColor;"
+      />
+    </svg>
   </div>
   <p
     class="mt-5"
@@ -36,7 +47,7 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
   </p>
   <!--v-if-->
   <div
-    class="flex mt-5 justify-end"
+    class="flex justify-end mt-5"
   >
     <span
       class="flex text-neutral"
@@ -84,7 +95,7 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
 
 exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1`] = `
 <div
-  class="bg-white rounded p-5"
+  class="p-5 bg-white rounded group"
 >
   <div
     class="flex items-center"
@@ -110,6 +121,17 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
         less than a minute ago
       </span>
     </div>
+    <svg
+      class="ml-auto opacity-0 transition-opacity text-neutral group-hover:opacity-100"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path
+        d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
+        style="fill: currentColor;"
+      />
+    </svg>
   </div>
   <p
     class="mt-5"
@@ -171,7 +193,7 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
     
   </div>
   <div
-    class="flex mt-5 justify-end"
+    class="flex justify-end mt-5"
   >
     <span
       class="flex text-neutral"

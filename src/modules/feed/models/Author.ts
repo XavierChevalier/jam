@@ -1,8 +1,8 @@
-import { z } from 'zod'
+import { InferType, object, string } from 'yup'
 
-export const Author = z.strictObject({
-  name: z.string(),
-  avatar: z.string().url(),
+export const Author = object({
+  name: string().required(),
+  avatar: string().required().url(),
 })
 
-export type Author = z.infer<typeof Author>
+export type Author = InferType<typeof Author>

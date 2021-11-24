@@ -1,13 +1,24 @@
-import { z } from 'zod'
+import { InferType, lazy, object, string } from 'yup'
+import { PartialBy } from '@/types/PartialBy'
 
-export const MdiExtra = z
-  .strictObject({
-    viewBox: z.optional(z.string()),
-    transform: z.optional(z.string()),
-    path: z.string(),
+export const MdiExtra = lazy((value) => {
+  if (typeof value === 'string') {
+    return string().required()
+  }
+
+  return object({
+    viewBox: string(),
+    transform: string(),
+    path: string().required(),
   })
-  .or(z.string())
-export type MdiExtra = z.infer<typeof MdiExtra>
+})
+
+type MdiExtraString = string
+type MdiExtraObjectOnly = Exclude<InferType<typeof MdiExtra>, MdiExtraString>
+// Make 'viewBox' and 'transform' property optional
+// @see https://github.com/jquense/yup/issues/1210
+type MdiExtraObject = PartialBy<MdiExtraObjectOnly, 'viewBox' | 'transform'>
+export type MdiExtra = MdiExtraString | MdiExtraObject
 
 export const mdiSpeechOutline: MdiExtra = {
   viewBox: '0 0 452.000000 452.000000',

@@ -3,6 +3,10 @@ const sourceNameMapper = {
   '@/(.*)$': '<rootDir>/src/$1',
 }
 
+const nodeModulesMapper = {
+  '^lodash-es$': 'lodash',
+}
+
 const styleNameMapper = {
   '\\.(css|less|scss|sass)$': '<rootDir>/src/tests/mocks/EmptyObjectMock.js',
 }
@@ -10,6 +14,7 @@ const styleNameMapper = {
 module.exports = {
   moduleNameMapper: {
     ...styleNameMapper,
+    ...nodeModulesMapper,
     ...sourceNameMapper,
   },
   setupFiles: ['./src/tests/jest.setup.ts'],

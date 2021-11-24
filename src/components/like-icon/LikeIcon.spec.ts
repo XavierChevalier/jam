@@ -6,11 +6,7 @@ import {
   LikedIconWithCounter,
   UnlikedIconWithCounter,
 } from '@/components/like-icon/LikeIcon.stories'
-import { generatePropertyValidationTests } from '@/tests/tools/PropsValidator'
-import {
-  fcNotPositiveNumber,
-  fcPositiveNumber,
-} from '@/tests/tools/FastCheckProperties'
+import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 
 describe('LikeIcon', () => {
   generateStorybookSnapshotTests({
@@ -20,8 +16,17 @@ describe('LikeIcon', () => {
     LikedIconWithCounter,
   })
 
-  generatePropertyValidationTests(LikedIcon).forProperty('counter').states({
-    valid: fcPositiveNumber,
-    invalid: fcNotPositiveNumber,
-  })
+  const componentTestsGenerator = new ComponentTestsGenerator(LikedIcon)
+  componentTestsGenerator.itShouldBeDefined()
+
+  componentTestsGenerator
+    .property<number>('counter')
+    .itShouldBeDefined()
+    .itShouldHaveAValidatorFunction()
+    .itShouldSuccessWith(0)
+    .itShouldSuccessWith(1)
+    .itShouldFailWith('negative number', -1)
+    .itShouldFailWith('null', null)
+
+  componentTestsGenerator.generateTests()
 })

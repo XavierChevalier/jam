@@ -1,7 +1,8 @@
 <script setup lang="ts">
   import { mdiHeart, mdiHeartOutline } from '@mdi/js'
   import Icon from '@/components/icon/Icon.vue'
-  import { z } from 'zod'
+  import { number } from 'yup'
+  import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
 
   defineProps({
     liked: {
@@ -16,7 +17,7 @@
       type: Number,
       default: 0,
       // eslint-disable-next-line vue/valid-define-props
-      validator: (value) => z.number().int().gte(0).safeParse(value).success,
+      validator: isPropertyValid(number().integer().min(0)),
     },
   })
 </script>

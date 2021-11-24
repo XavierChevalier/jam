@@ -1,13 +1,14 @@
 <script setup lang="ts">
   import { TrackOfTrackCover } from '@/modules/track/models/TrackCover'
   import { computed, PropType } from 'vue'
+  import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
 
   const props = defineProps({
     track: {
       type: Object as PropType<TrackOfTrackCover>,
       required: true,
       // eslint-disable-next-line vue/valid-define-props
-      validator: (value) => TrackOfTrackCover.safeParse(value).success,
+      validator: isPropertyValid(TrackOfTrackCover),
     },
   })
 

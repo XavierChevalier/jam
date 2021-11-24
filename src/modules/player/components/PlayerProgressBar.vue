@@ -1,13 +1,14 @@
 <script setup lang="ts">
-  import { z } from 'zod'
   import { computed } from 'vue'
+  import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
+  import { number } from 'yup'
 
   const props = defineProps({
     progress: {
       type: Number,
       required: true,
       // eslint-disable-next-line vue/valid-define-props
-      validator: (value) => z.number().gte(0).safeParse(value).success,
+      validator: isPropertyValid(number().integer().min(0)),
     },
   })
 
