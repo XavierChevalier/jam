@@ -2,13 +2,13 @@
   import { PropType } from 'vue'
   import { Track } from '@/modules/track/models/Track'
   import DotSeparator from '@/components/AppDotSeparator.vue'
-  import PlayerProgressBar from '@/modules/player/components/PlayerProgressBar.vue'
+  import PlayerProgressBar from '@/modules/player/components/atoms/PlayerProgressBar.vue'
   import IconLike from '@/components/AppIconLike.vue'
   import Icon from '@/components/AppIcon.vue'
   import { mdiPlayOutline } from '@mdi/js'
-  import TrackCover from '@/modules/track/components/TrackCover.vue'
+  import TrackCover from '@/modules/track/components/atoms/TrackCover.vue'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
-  import PlayerRemoteListeningDevice from '@/modules/player/components/PlayerRemoteListeningDevice.vue'
+  import PlayerRemoteListeningDevice from '@/modules/player/components/atoms/PlayerRemoteListeningDevice.vue'
 
   defineProps({
     track: {

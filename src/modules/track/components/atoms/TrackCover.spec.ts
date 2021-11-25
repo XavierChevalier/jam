@@ -1,15 +1,15 @@
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
 import {
   Default,
-  WithSizeOf6,
-} from '@/modules/track/components/TrackCover.stories'
+  SmallSize,
+} from '@/modules/track/components/atoms/TrackCover.stories'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import TrackCover from './TrackCover.vue'
 import { TrackOfTrackCover } from '@/modules/track/models/TrackCover'
 import { omit } from 'lodash-es'
 
 describe('TrackCover', () => {
-  generateStorybookSnapshotTests({ Default, WithSizeOf6 })
+  generateStorybookSnapshotTests({ Default, SmallSize })
 
   const componentTestsGenerator = new ComponentTestsGenerator(TrackCover)
   componentTestsGenerator.itShouldBeDefined()

@@ -5,7 +5,7 @@ import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { TrackOfTrackCover } from '@/modules/track/models/TrackCover'
 
 export default {
-  title: 'Player/TrackCover',
+  title: 'Player/Atoms/TrackCover',
   component: TrackCover,
 } as Meta
 
@@ -25,8 +25,8 @@ const track: TrackOfTrackCover = {
 export const Default = Template.bind({})
 Default.args = { track }
 
-export const WithSizeOf6 = Template.bind({})
-WithSizeOf6.args = {
+export const SmallSize = Template.bind({})
+SmallSize.args = {
   track,
-  size: 6,
+  size: 'sm',
 }
