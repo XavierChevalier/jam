@@ -12,7 +12,6 @@
     counter: {
       type: Number,
       default: 0,
-      // eslint-disable-next-line vue/valid-define-props
       validator: isPropertyValid(number().integer().min(0)),
     },
   })

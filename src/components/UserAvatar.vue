@@ -11,7 +11,6 @@
     url: {
       type: String,
       required: true,
-      // eslint-disable-next-line vue/valid-define-props
       validator: isPropertyValid(string().required().url()),
     },
   })

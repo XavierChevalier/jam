@@ -17,11 +17,16 @@ const Template: Story = (args) => ({
   template: '<TrackCover v-bind="args" />',
 })
 
+const track: TrackOfTrackCover = {
+  cover: 'https://picsum.photos/50',
+  title: 'G.O.A.T.',
+  bands: ['Polyphia'],
+}
 export const Default = Template.bind({})
-Default.args = {
-  track: {
-    cover: 'https://picsum.photos/50',
-    title: 'G.O.A.T.',
-    bands: ['Polyphia'],
-  } as TrackOfTrackCover,
+Default.args = { track }
+
+export const WithSizeOf6 = Template.bind({})
+WithSizeOf6.args = {
+  track,
+  size: 6,
 }

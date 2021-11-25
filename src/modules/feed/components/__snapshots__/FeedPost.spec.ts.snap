@@ -29,10 +29,8 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
       </span>
     </div>
     <svg
-      class="ml-auto opacity-0 transition-opacity text-neutral group-hover:opacity-100"
-      height="24"
+      class="inline-block align-middle w-6 h-6 ml-auto opacity-0 transition-opacity text-neutral group-hover:opacity-100"
       viewBox="0 0 24 24"
-      width="24"
     >
       <path
         d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
@@ -53,10 +51,8 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
       class="flex text-neutral"
     >
       <svg
-        class=""
-        height="24"
+        class="inline-block align-middle w-6 h-6"
         viewBox="0 0 24 24"
-        width="24"
       >
         <path
           d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z"
@@ -73,9 +69,8 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
       class="flex text-neutral ml-5"
     >
       <svg
-        height="24"
+        class="inline-block align-middle w-6 h-6"
         viewBox="0 0 452.000000 452.000000"
-        width="24"
       >
         <path
           d="M2006 4129 c-434 -56 -842 -250 -1137 -541 -255 -251 -412 -549 -471 -892 -17 -103 -19 -148 -15 -296 8 -257 47 -414 162 -645 282 -567 876 -943 1572 -995 99 -8 167 -8 225 0 45 5 88 10 95 10 10 0 13 -63 13 -300 l0 -299 188 121 c389 250 652 465 878 719 320 358 509 710 591 1099 24 111 27 148 27 330 1 226 -10 304 -66 480 -206 643 -820 1117 -1568 1210 -99 12 -395 11 -494 -1z m548 -389 c133 -23 212 -45 333 -94 460 -184 789 -567 864 -1006 17 -104 15 -296 -4 -407 -73 -407 -322 -787 -777 -1185 l-135 -118 -5 138 -5 137 -25 -3 c-14 -1 -82 -13 -151 -27 -70 -13 -167 -29 -215 -35 -513 -58 -1060 144 -1371 510 -204 239 -306 502 -307 795 0 138 14 233 55 360 97 307 334 585 643 756 205 114 417 176 691 203 79 8 300 -5 409 -24z"
@@ -122,10 +117,8 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
       </span>
     </div>
     <svg
-      class="ml-auto opacity-0 transition-opacity text-neutral group-hover:opacity-100"
-      height="24"
+      class="inline-block align-middle w-6 h-6 ml-auto opacity-0 transition-opacity text-neutral group-hover:opacity-100"
       viewBox="0 0 24 24"
-      width="24"
     >
       <path
         d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
@@ -171,10 +164,8 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
           class="flex text-neutral text-black-light"
         >
           <svg
-            class=""
-            height="24"
+            class="inline-block align-middle w-6 h-6"
             viewBox="0 0 24 24"
-            width="24"
           >
             <path
               d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z"
@@ -199,10 +190,8 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
       class="flex text-neutral"
     >
       <svg
-        class=""
-        height="24"
+        class="inline-block align-middle w-6 h-6"
         viewBox="0 0 24 24"
-        width="24"
       >
         <path
           d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z"
@@ -219,9 +208,8 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
       class="flex text-neutral ml-5"
     >
       <svg
-        height="24"
+        class="inline-block align-middle w-6 h-6"
         viewBox="0 0 452.000000 452.000000"
-        width="24"
       >
         <path
           d="M2006 4129 c-434 -56 -842 -250 -1137 -541 -255 -251 -412 -549 -471 -892 -17 -103 -19 -148 -15 -296 8 -257 47 -414 162 -645 282 -567 876 -943 1572 -995 99 -8 167 -8 225 0 45 5 88 10 95 10 10 0 13 -63 13 -300 l0 -299 188 121 c389 250 652 465 878 719 320 358 509 710 591 1099 24 111 27 148 27 330 1 226 -10 304 -66 480 -206 643 -820 1117 -1568 1210 -99 12 -395 11 -494 -1z m548 -389 c133 -23 212 -45 333 -94 460 -184 789 -567 864 -1006 17 -104 15 -296 -4 -407 -73 -407 -322 -787 -777 -1185 l-135 -118 -5 138 -5 137 -25 -3 c-14 -1 -82 -13 -151 -27 -70 -13 -167 -29 -215 -35 -513 -58 -1060 144 -1371 510 -204 239 -306 502 -307 795 0 138 14 233 55 360 97 307 334 585 643 756 205 114 417 176 691 203 79 8 300 -5 409 -24z"

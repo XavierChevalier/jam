@@ -1,5 +1,10 @@
 import Icon from './Icon.vue'
-import { Alert, SpeechOutline } from '@/components/Icon.stories'
+import {
+  Alert,
+  MusicVideo,
+  SmallSpeechOutline,
+  SpeechOutline,
+} from '@/components/Icon.stories'
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import { MdiExtra, mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'
@@ -7,7 +12,12 @@ import { mdiAlert } from '@mdi/js'
 import { omit } from 'lodash-es'
 
 describe('Icon', () => {
-  generateStorybookSnapshotTests({ Alert, SpeechOutline })
+  generateStorybookSnapshotTests({
+    Alert,
+    SpeechOutline,
+    SmallSpeechOutline,
+    MusicVideo,
+  })
 
   const componentTestsGenerator = new ComponentTestsGenerator(Icon)
   componentTestsGenerator.itShouldBeDefined()
@@ -20,6 +30,7 @@ describe('Icon', () => {
   componentTestsGenerator
     .property<MdiExtra>('path')
     .itShouldBeDefined()
+    .itShouldBeRequired()
     .itShouldHaveAValidatorFunction()
     .itShouldSuccessWith(mdiAlert)
     .itShouldSuccessWith(mdiSpeechOutline)
@@ -28,6 +39,16 @@ describe('Icon', () => {
     .itShouldFailWith('empty string', '')
     .itShouldFailWith('number', 1)
     .itShouldFailWith('missing path', omit(icon, ['path']))
+
+  componentTestsGenerator
+    .property<string>('size')
+    .itShouldBeDefined()
+    .itShouldHaveAValidatorFunction()
+    .itShouldSuccessWith('sm')
+    .itShouldSuccessWith('base')
+    .itShouldSuccessWith('lg')
+    .itShouldSuccessWith('xl')
+    .itShouldFailWith('unknown size type', 'unknown')
 
   componentTestsGenerator.generateTests()
 })

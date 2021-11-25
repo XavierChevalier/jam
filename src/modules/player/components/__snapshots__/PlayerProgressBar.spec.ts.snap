@@ -2,10 +2,10 @@
 
 exports[`PlayerProgressBar [snapshot] should render the "Progress0" component correctly 1`] = `
 <div
-  class="h-1 bg-primary-light"
+  class="overflow-hidden h-1 rounded-full bg-primary/20"
 >
   <div
-    class="h-full rounded-full bg-primary"
+    class="h-full bg-primary"
     style="width: 0%;"
   />
 </div>
@@ -13,10 +13,10 @@ exports[`PlayerProgressBar [snapshot] should render the "Progress0" component co
 
 exports[`PlayerProgressBar [snapshot] should render the "Progress42" component correctly 1`] = `
 <div
-  class="h-1 bg-primary-light"
+  class="overflow-hidden h-1 rounded-full bg-primary/20"
 >
   <div
-    class="h-full rounded-full bg-primary"
+    class="h-full bg-primary"
     style="width: 42%;"
   />
 </div>
@@ -24,10 +24,10 @@ exports[`PlayerProgressBar [snapshot] should render the "Progress42" component c
 
 exports[`PlayerProgressBar [snapshot] should render the "Progress50" component correctly 1`] = `
 <div
-  class="h-1 bg-primary-light"
+  class="overflow-hidden h-1 rounded-full bg-primary/20"
 >
   <div
-    class="h-full rounded-full bg-primary"
+    class="h-full bg-primary"
     style="width: 50%;"
   />
 </div>
@@ -35,10 +35,10 @@ exports[`PlayerProgressBar [snapshot] should render the "Progress50" component c
 
 exports[`PlayerProgressBar [snapshot] should render the "Progress100" component correctly 1`] = `
 <div
-  class="h-1 bg-primary-light"
+  class="overflow-hidden h-1 rounded-full bg-primary/20"
 >
   <div
-    class="h-full rounded-full bg-primary"
+    class="h-full bg-primary"
     style="width: 100%;"
   />
 </div>

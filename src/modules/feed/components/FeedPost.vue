@@ -13,7 +13,6 @@
     author: {
       type: Object as PropType<Author>,
       required: true,
-      // eslint-disable-next-line vue/valid-define-props
       validator: isPropertyValid(Author),
     },
     content: {

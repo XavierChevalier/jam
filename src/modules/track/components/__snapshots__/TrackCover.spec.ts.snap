@@ -3,7 +3,17 @@
 exports[`TrackCover [snapshot] should render the "Default" component correctly 1`] = `
 <img
   alt="The track cover of G.O.A.T. • Polyphia"
-  class="rounded w-16 h-16"
+  class="rounded"
   src="https://picsum.photos/50"
+  style="width: 4rem; height: 4rem;"
+/>
+`;
+
+exports[`TrackCover [snapshot] should render the "WithSizeOf6" component correctly 1`] = `
+<img
+  alt="The track cover of G.O.A.T. • Polyphia"
+  class="rounded"
+  src="https://picsum.photos/50"
+  style="width: 6rem; height: 6rem;"
 />
 `;

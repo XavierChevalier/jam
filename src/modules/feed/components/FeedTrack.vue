@@ -9,7 +9,6 @@
     track: {
       type: Object as PropType<Track>,
       required: true,
-      // eslint-disable-next-line vue/valid-define-props
       validator: isPropertyValid(Track),
     },
   })

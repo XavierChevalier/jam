@@ -1,3 +1,3 @@
 <template>
-  <span class="px-2">•</span>
+  <span class="px-1">•</span>
 </template>

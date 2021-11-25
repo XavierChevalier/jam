@@ -7,19 +7,15 @@
     progress: {
       type: Number,
       required: true,
-      // eslint-disable-next-line vue/valid-define-props
       validator: isPropertyValid(number().integer().min(0)),
     },
   })
 
-  const progressFill = computed(() => props.progress + '%')
+  const progressFill = computed(() => `${props.progress}%`)
 </script>
 
 <template>
-  <div class="h-1 bg-primary-light">
-    <div
-      class="h-full rounded-full bg-primary"
-      :style="{ width: progressFill }"
-    />
+  <div class="overflow-hidden h-1 rounded-full bg-primary/20">
+    <div class="h-full bg-primary" :style="{ width: progressFill }" />
   </div>
 </template>

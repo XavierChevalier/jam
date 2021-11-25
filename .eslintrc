@@ -20,5 +20,7 @@
     "defineEmits": "readonly"
   },
   "plugins": [],
-  "rules": {}
+  "rules": {
+    "vue/valid-define-props": ["off"]
+  }
 }

@@ -2,7 +2,7 @@
 
 exports[`DotSeparator [snapshot] should render the "Default" component correctly 1`] = `
 <span
-  class="px-2"
+  class="px-1"
 >
   •
 </span>

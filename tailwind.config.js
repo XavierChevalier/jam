@@ -1,12 +1,20 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { fontFamily, borderRadius } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   mode: 'jit',
   purge: ['./index.html', './src/**/*.{vue,js,ts}'],
   darkMode: 'class',
   fontFamily: {
-    sans: ['Noto Sans', 'ui-sans-serif', 'system-ui'],
+    ...fontFamily,
+    sans: fontFamily.sans.sort((font) => (font === '"Noto Sans"' ? -1 : 1)),
   },
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        4.5: '1.065rem',
+      },
+    },
     colors: {
       neutral: {
         light: '#CECECE',
@@ -14,7 +22,7 @@ module.exports = {
       },
       primary: {
         DEFAULT: '#03BE68',
-        light: '#cef1df',
+        light: '#F4FCF7',
       },
       black: {
         light: '#252525',
@@ -24,6 +32,10 @@ module.exports = {
         DEFAULT: '#FFF',
         dark: '#F8F8F8',
       },
+    },
+    borderRadius: {
+      ...borderRadius,
+      DEFAULT: '.35rem',
     },
   },
 }
