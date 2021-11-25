@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserAvatar [snapshot] should render the "PicsumPhoto" component correctly 1`] = `
+exports[`AppUserAvatar [snapshot] should render the "PicsumPhoto" component correctly 1`] = `
 <div
   class="w-10 h-10 relative after:absolute after:w-12 after:h-12 after:-top-1 after:-left-1 after:rounded-full after:border-2 after:border-neutral-light"
 >

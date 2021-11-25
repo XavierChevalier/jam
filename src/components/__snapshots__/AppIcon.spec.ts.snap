@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon [snapshot] should render the "Alert" component correctly 1`] = `
+exports[`AppIcon [snapshot] should render the "Alert" component correctly 1`] = `
 <svg
   class="inline-block align-middle w-6 h-6"
   viewBox="0 0 24 24"
@@ -12,7 +12,7 @@ exports[`Icon [snapshot] should render the "Alert" component correctly 1`] = `
 </svg>
 `;
 
-exports[`Icon [snapshot] should render the "MusicVideo" component correctly 1`] = `
+exports[`AppIcon [snapshot] should render the "MusicVideo" component correctly 1`] = `
 <svg
   class="inline-block align-middle w-6 h-6"
   viewBox="0 0 24 24"
@@ -24,7 +24,7 @@ exports[`Icon [snapshot] should render the "MusicVideo" component correctly 1`] 
 </svg>
 `;
 
-exports[`Icon [snapshot] should render the "SmallSpeechOutline" component correctly 1`] = `
+exports[`AppIcon [snapshot] should render the "SmallSpeechOutline" component correctly 1`] = `
 <svg
   class="inline-block align-middle w-4.5 h-4.5"
   viewBox="0 0 452.000000 452.000000"
@@ -37,7 +37,7 @@ exports[`Icon [snapshot] should render the "SmallSpeechOutline" component correc
 </svg>
 `;
 
-exports[`Icon [snapshot] should render the "SpeechOutline" component correctly 1`] = `
+exports[`AppIcon [snapshot] should render the "SpeechOutline" component correctly 1`] = `
 <svg
   class="inline-block align-middle w-6 h-6"
   viewBox="0 0 452.000000 452.000000"

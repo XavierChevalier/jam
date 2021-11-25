@@ -1,17 +1,17 @@
-import Icon from './Icon.vue'
+import AppIcon from './AppIcon.vue'
 import {
   Alert,
   MusicVideo,
   SmallSpeechOutline,
   SpeechOutline,
-} from '@/components/Icon.stories'
+} from '@/components/AppIcon.stories'
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import { MdiExtra, mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'
 import { mdiAlert } from '@mdi/js'
 import { omit } from 'lodash-es'
 
-describe('Icon', () => {
+describe('AppIcon', () => {
   generateStorybookSnapshotTests({
     Alert,
     SpeechOutline,
@@ -19,7 +19,7 @@ describe('Icon', () => {
     MusicVideo,
   })
 
-  const componentTestsGenerator = new ComponentTestsGenerator(Icon)
+  const componentTestsGenerator = new ComponentTestsGenerator(AppIcon)
   componentTestsGenerator.itShouldBeDefined()
 
   const icon = {

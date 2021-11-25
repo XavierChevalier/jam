@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import { PropType } from 'vue'
   import { Track } from '@/modules/track/models/Track'
-  import DotSeparator from '@/components/DotSeparator.vue'
+  import DotSeparator from '@/components/AppDotSeparator.vue'
   import PlayerProgressBar from '@/modules/player/components/PlayerProgressBar.vue'
-  import IconLike from '@/components/IconLike.vue'
-  import Icon from '@/components/Icon.vue'
+  import IconLike from '@/components/AppIconLike.vue'
+  import Icon from '@/components/AppIcon.vue'
   import { mdiPlayOutline } from '@mdi/js'
   import TrackCover from '@/modules/track/components/TrackCover.vue'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'

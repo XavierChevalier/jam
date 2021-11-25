@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Icon from '@/components/Icon.vue'
+  import Icon from '@/components/AppIcon.vue'
   import { mdiMusicVideo } from '@/assets/images/icons/MdiExtra'
 
   defineProps({

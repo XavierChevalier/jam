@@ -1,22 +1,22 @@
-import DotSeparator from './DotSeparator.vue'
+import AppDotSeparator from './AppDotSeparator.vue'
 import { Story } from '@storybook/vue3'
 import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 
 export default {
-  title: 'Components/DotSeparator',
-  component: DotSeparator,
+  title: 'Components/AppDotSeparator',
+  component: AppDotSeparator,
   parameters: {
     layout: 'centered',
   },
 } as Meta
 
 const Template: Story = (args) => ({
-  components: {DotSeparator},
+  components: { AppDotSeparator },
   setup() {
-    return {args}
+    return { args }
   },
-  template: '<DotSeparator v-bind="args" />',
+  template: '<AppDotSeparator v-bind="args" />',
 })
 
 export const Default = Template.bind({})

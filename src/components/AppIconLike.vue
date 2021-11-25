@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { mdiHeart, mdiHeartOutline } from '@mdi/js'
-  import Icon from '@/components/Icon.vue'
+  import Icon from '@/components/AppIcon.vue'
   import { number } from 'yup'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
 

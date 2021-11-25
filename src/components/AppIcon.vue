@@ -1,11 +1,13 @@
 <script lang="ts">
+  import { defineComponent } from 'vue'
+
   export const availableSizes = {
     sm: 'w-4.5 h-4.5',
     base: 'w-6 h-6',
     lg: 'w-7 h-7',
     xl: 'w-9 h-9',
   }
-  export default {}
+  export default defineComponent({})
 </script>
 
 <script setup lang="ts">

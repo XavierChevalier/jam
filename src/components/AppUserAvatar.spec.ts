@@ -1,12 +1,12 @@
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { PicsumPhoto } from '@/components/UserAvatar.stories'
-import UserAvatar from './UserAvatar.vue'
+import { PicsumPhoto } from './AppUserAvatar.stories'
+import AppUserAvatar from './AppUserAvatar.vue'
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 
-describe('UserAvatar', () => {
+describe('AppUserAvatar', () => {
   generateStorybookSnapshotTests({ PicsumPhoto })
 
-  const componentTestsGenerator = new ComponentTestsGenerator(UserAvatar)
+  const componentTestsGenerator = new ComponentTestsGenerator(AppUserAvatar)
   componentTestsGenerator.itShouldBeDefined()
 
   componentTestsGenerator

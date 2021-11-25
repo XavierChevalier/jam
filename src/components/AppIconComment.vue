@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'
-  import Icon from '@/components/Icon.vue'
+  import Icon from '@/components/AppIcon.vue'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
   import { number } from 'yup'
 

@@ -7,7 +7,10 @@ export class ComponentTestsGenerator implements TestsGenerator {
   private readonly testsContainer = new TestsGeneratorContainer()
   private propertyTests: PropertyTestsGenerator<unknown>[] = []
 
-  constructor(private readonly component: DefineComponent) {}
+  constructor(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    private readonly component: DefineComponent<unknown, unknown, any>
+  ) {}
 
   itShouldBeDefined() {
     this.testsContainer.addTest('component should be defined', () =>

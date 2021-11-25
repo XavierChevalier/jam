@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`DotSeparator [snapshot] should render the "Default" component correctly 1`] = `
-<span
-  class="px-1"
->
-  •
-</span>
-`;

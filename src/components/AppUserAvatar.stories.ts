@@ -1,22 +1,22 @@
-import UserAvatar from './UserAvatar.vue'
+import AppUserAvatar from './AppUserAvatar.vue'
 import { Story } from '@storybook/vue3'
 import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 
 export default {
-  title: 'Components/UserAvatar',
-  component: UserAvatar,
+  title: 'Components/AppUserAvatar',
+  component: AppUserAvatar,
   parameters: {
     layout: 'centered',
   },
 } as Meta
 
 const Template: Story = (args) => ({
-  components: { UserAvatar },
+  components: { AppUserAvatar },
   setup() {
     return { args }
   },
-  template: '<UserAvatar v-bind="args" />',
+  template: '<AppUserAvatar v-bind="args" />',
 })
 
 export const PicsumPhoto = Template.bind({})

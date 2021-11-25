@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { computed, PropType } from 'vue'
-  import IconLike from '@/components/IconLike.vue'
+  import IconLike from '@/components/AppIconLike.vue'
   import { formatDuration } from '@/tools/date/FormatDuration'
   import { Track } from '@/modules/track/models/Track'
   import { isPropertyValid } from '@/tools/component-properties/PropertyValidator'
