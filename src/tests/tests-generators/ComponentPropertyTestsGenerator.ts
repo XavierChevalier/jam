@@ -4,7 +4,7 @@ import { TestsGenerator } from '@/tests/tests-generators/TestsGenerator'
 
 // From "node_modules/@vue/runtime-core/dist/runtime-core.d.ts"
 type ValidatorFunction<T = unknown> = (value: T) => boolean
-type PropOptions<T = unknown> = Readonly<{
+export type PropOptions<T = unknown> = Readonly<{
   type?: PropType<T>
   required?: boolean
   default?: T | null | undefined | (() => T | null | undefined)

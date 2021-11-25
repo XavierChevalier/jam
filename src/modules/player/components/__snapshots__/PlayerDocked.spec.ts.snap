@@ -3,11 +3,11 @@
 exports[`PlayerDocked [snapshot] should render the "Default" component correctly 1`] = `
 <div>
   <div
-    class="text-xs flex px-5 py-3 text-sm rounded shadow-lg bg-primary-light items-center"
+    class="text-xs flex px-5 py-3 rounded shadow-lg bg-primary-light items-center"
   >
     <anonymous-stub
       class="mr-3"
-      size="3"
+      size="sm"
       track="[object Object]"
     />
     <div
@@ -39,7 +39,6 @@ exports[`PlayerDocked [snapshot] should render the "Default" component correctly
       />
       <anonymous-stub
         path="M8.5,8.64L13.77,12L8.5,15.36V8.64M6.5,5V19L17.5,12"
-        size="base"
       />
     </div>
   </div>
@@ -53,11 +52,11 @@ exports[`PlayerDocked [snapshot] should render the "Default" component correctly
 exports[`PlayerDocked [snapshot] should render the "ListeningOnDesktop" component correctly 1`] = `
 <div>
   <div
-    class="text-xs flex px-5 py-3 text-sm rounded shadow-lg bg-primary-light items-center"
+    class="text-xs flex px-5 py-3 rounded shadow-lg bg-primary-light items-center"
   >
     <anonymous-stub
       class="mr-3"
-      size="3"
+      size="sm"
       track="[object Object]"
     />
     <div
@@ -91,7 +90,6 @@ exports[`PlayerDocked [snapshot] should render the "ListeningOnDesktop" componen
       />
       <anonymous-stub
         path="M8.5,8.64L13.77,12L8.5,15.36V8.64M6.5,5V19L17.5,12"
-        size="base"
       />
     </div>
   </div>

@@ -1,16 +1,29 @@
-import { DefineComponent } from 'vue'
 import { TestsGeneratorContainer } from '@/tests/tests-generators/TestsGeneratorContainer'
-import { PropertyTestsGenerator } from '@/tests/tests-generators/ComponentPropertyTestsGenerator'
+import {
+  PropertyTestsGenerator,
+  PropOptions,
+} from '@/tests/tests-generators/ComponentPropertyTestsGenerator'
 import { TestsGenerator } from '@/tests/tests-generators/TestsGenerator'
+import { ComponentOptionsBase } from '@vue/runtime-core'
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type AnyComponentOptionsBase = ComponentOptionsBase<
+  any,
+  any,
+  any,
+  any,
+  any,
+  any,
+  any,
+  any
+>
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export class ComponentTestsGenerator implements TestsGenerator {
   private readonly testsContainer = new TestsGeneratorContainer()
   private propertyTests: PropertyTestsGenerator<unknown>[] = []
 
-  constructor(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    private readonly component: DefineComponent<unknown, unknown, any>
-  ) {}
+  constructor(private readonly component: AnyComponentOptionsBase) {}
 
   itShouldBeDefined() {
     this.testsContainer.addTest('component should be defined', () =>
@@ -23,12 +36,24 @@ export class ComponentTestsGenerator implements TestsGenerator {
   property<T = unknown>(propertyName: string) {
     const propertyTestsGenerator = new PropertyTestsGenerator<T>(
       propertyName,
-      this.component?.props?.[propertyName]
+      this.getPropertyDefinition(propertyName)
     )
 
     this.propertyTests.push(propertyTestsGenerator)
 
     return propertyTestsGenerator
+  }
+
+  private getPropertyDefinition(propertyName: string) {
+    const getFromComponentProperties = () =>
+      this.component?.props?.[propertyName]
+
+    const getFromComponentMixins = () =>
+      this.component?.mixins
+        ?.map((mixin: AnyComponentOptionsBase) => mixin?.props?.[propertyName])
+        .find((property: PropOptions) => property !== undefined)
+
+    return getFromComponentProperties() || getFromComponentMixins()
   }
 
   generateTests() {

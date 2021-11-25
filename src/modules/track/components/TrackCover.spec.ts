@@ -30,10 +30,14 @@ describe('TrackCover', () => {
     .itShouldFailWith('missing bands', omit(track, 'bands'))
 
   componentTestsGenerator
-    .property<number>('size')
+    .property<string>('size')
     .itShouldBeDefined()
-    .itShouldBeTypeOf(Number)
+    .itShouldBeTypeOf(String)
     .itShouldHaveADefaultValue()
+    .itShouldHaveAValidatorFunction()
+    .itShouldSuccessWith('sm')
+    .itShouldSuccessWith('base')
+    .itShouldFailWith('unknown size type', 'unknown')
 
   componentTestsGenerator.generateTests()
 })

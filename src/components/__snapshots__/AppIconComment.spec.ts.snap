@@ -6,7 +6,6 @@ exports[`AppIconComment [snapshot] should render the "IconCommentWithCounter" co
 >
   <anonymous-stub
     path="[object Object]"
-    size="base"
   />
   <span
     class="ml-2"
@@ -22,7 +21,6 @@ exports[`AppIconComment [snapshot] should render the "JustIconComment" component
 >
   <anonymous-stub
     path="[object Object]"
-    size="base"
   />
   <!--v-if-->
 </span>

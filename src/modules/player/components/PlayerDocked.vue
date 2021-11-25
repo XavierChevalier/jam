@@ -32,14 +32,13 @@
         flex
         px-5
         py-3
-        text-sm
         rounded
         shadow-lg
         bg-primary-light
         items-center
       "
     >
-      <TrackCover class="mr-3" :size="3" :track="track" />
+      <TrackCover class="mr-3" size="sm" :track="track" />
 
       <div class="flex flex-col">
         <div>
