@@ -1,6 +1,6 @@
 import { Story as StorybookStory, StoryContext } from '@storybook/vue3'
 import { ComponentOptionsWithObjectProps, ComponentPublicInstance } from 'vue'
-import { mount, VueWrapper } from '@vue/test-utils'
+import { shallowMount, VueWrapper } from '@vue/test-utils'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Story = StorybookStory<any>
@@ -40,7 +40,12 @@ function getUnwrappedElement(wrapper: VueWrapper<ComponentPublicInstance>) {
 
 function generateStorybookSnapshotTest(storyName: StoryName, story: Story) {
   test(`[snapshot] should render the "${storyName}" component correctly`, () => {
-    const wrapper = mount(createComponentFromStory(story))
+    const component = createComponentFromStory(story)
+    const wrapper = shallowMount(component, {
+      global: {
+        stubs: component.components,
+      },
+    })
 
     expect(getUnwrappedElement(wrapper)).toMatchSnapshot()
   })
