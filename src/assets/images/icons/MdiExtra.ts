@@ -17,7 +17,10 @@ type MdiExtraString = string
 type MdiExtraObjectOnly = Exclude<InferType<typeof MdiExtra>, MdiExtraString>
 // Make 'viewBox' and 'transform' property optional
 // @see https://github.com/jquense/yup/issues/1210
-type MdiExtraObject = PartialBy<MdiExtraObjectOnly, 'viewBox' | 'transform'>
+export type MdiExtraObject = PartialBy<
+  MdiExtraObjectOnly,
+  'viewBox' | 'transform'
+>
 export type MdiExtra = MdiExtraString | MdiExtraObject
 
 export const mdiSpeechOutline: MdiExtra = {

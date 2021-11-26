@@ -15,28 +15,31 @@
 </script>
 
 <script setup lang="ts">
-  import { PropType } from 'vue'
-  import { MdiExtra } from '@/assets/images/icons/MdiExtra'
+  import { computed, PropType } from 'vue'
+  import { MdiExtra, MdiExtraObject } from '@/assets/images/icons/MdiExtra'
   import { isPropertyValid } from '@/app/tools/component-properties/PropertyValidator'
 
-  defineProps({
+  const props = defineProps({
     path: {
       type: [String, Object] as PropType<MdiExtra>,
       required: true,
       validator: isPropertyValid(MdiExtra),
     },
   })
+  const pathObject = computed<MdiExtraObject>(() =>
+    typeof props.path === 'object' ? props.path : { path: props.path }
+  )
 </script>
 
 <template>
   <svg
     class="inline-block align-middle"
     :class="sizeClass"
-    :viewBox="path.viewBox || '0 0 24 24'"
+    :viewBox="pathObject.viewBox || '0 0 24 24'"
   >
     <path
-      :transform="path.transform"
-      :d="path.path || path"
+      :transform="pathObject.transform"
+      :d="pathObject.path"
       style="fill: currentColor"
     />
   </svg>

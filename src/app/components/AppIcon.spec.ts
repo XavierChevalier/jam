@@ -22,7 +22,7 @@ describe('AppIcon', () => {
   const componentTestsGenerator = new ComponentTestsGenerator(AppIcon)
   componentTestsGenerator.itShouldBeDefined()
 
-  const icon = {
+  const icon: MdiExtra = {
     viewBox: '0 0 452.000000 452.000000',
     transform: 'translate(0.000000,452.000000)',
     path: 'M2006 4129 c-434 -56 -842',
