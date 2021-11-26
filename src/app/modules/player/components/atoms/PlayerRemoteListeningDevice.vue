@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import Icon from '@/app/components/AppIcon.vue'
-  import { mdiMusicVideo } from '@/assets/images/icons/MdiExtra'
+  import { mdiMusicVideoOutline } from '@/assets/images/icons/MdiExtra'
 
   defineProps({
     remoteDeviceName: {
@@ -12,7 +12,7 @@
 
 <template>
   <span class="text-primary">
-    <Icon size="sm" :path="mdiMusicVideo" />
+    <Icon size="sm" :path="mdiMusicVideoOutline" />
     <span class="ml-1 align-middle">{{ remoteDeviceName }}</span>
   </span>
 </template>
