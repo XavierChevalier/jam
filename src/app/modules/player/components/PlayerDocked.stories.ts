@@ -1,6 +1,5 @@
 import PlayerDocked from './PlayerDocked.vue'
 import { Story } from '@storybook/vue3'
-import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 
 export default {

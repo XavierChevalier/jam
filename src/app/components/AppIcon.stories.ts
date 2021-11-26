@@ -1,6 +1,5 @@
 import AppIcon from './AppIcon.vue'
 import { Story } from '@storybook/vue3'
-import '@/assets/styles/index.scss'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { mdiAlert } from '@mdi/js'
 import { mdiMusicVideo, mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'

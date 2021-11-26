@@ -1,4 +1,5 @@
 const tailwindcss = require('../tailwind.config')
+require('./../src/assets/styles/index.scss')
 
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
