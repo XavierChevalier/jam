@@ -1,42 +1,24 @@
 import AppIcon from './AppIcon.vue'
-import { Story } from '@storybook/vue3'
-import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
+import { storiesOf } from '@storybook/vue3'
+import * as AllMdiExtra from '@/assets/images/icons/MdiExtra'
+import { MdiExtra } from '@/assets/images/icons/MdiExtra'
+import { omit } from 'lodash-es'
 import { mdiAlert } from '@mdi/js'
-import { mdiMusicVideo, mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'
 
-export default {
-  title: 'Components/AppIcon',
-  component: AppIcon,
-  parameters: {
-    layout: 'centered',
-  },
-} as Meta
-
-const Template: Story = (args) => ({
-  components: { AppIcon },
-  setup() {
-    return { args }
-  },
-  template: '<AppIcon v-bind="args" />',
+const stories = storiesOf('Components/AppIcon', module).addParameters({
+  layout: 'centered',
 })
 
-export const Alert = Template.bind({})
-Alert.args = {
-  path: mdiAlert,
+const icons: Record<string, MdiExtra> = {
+  mdiAlert,
+  ...omit(AllMdiExtra, ['MdiExtra']),
 }
-
-export const SpeechOutline = Template.bind({})
-SpeechOutline.args = {
-  path: mdiSpeechOutline,
-}
-
-export const SmallSpeechOutline = Template.bind({})
-SmallSpeechOutline.args = {
-  path: mdiSpeechOutline,
-  size: 'sm',
-}
-
-export const MusicVideo = Template.bind({})
-MusicVideo.args = {
-  path: mdiMusicVideo,
-}
+Object.keys(icons).forEach((iconName) => {
+  stories.add(iconName, () => ({
+    components: { AppIcon },
+    setup() {
+      return { args: { path: icons[iconName] } }
+    },
+    template: '<AppIcon v-bind="args" />',
+  }))
+})
