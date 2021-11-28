@@ -46,7 +46,10 @@ describe('AppIcon', () => {
     .itShouldFailWith('missing path', omit(icon, ['path']))
 
   icons.forEach((icon) => {
-    pathPropertyTestsGenerator.itShouldSuccessWith(icon.path)
+    pathPropertyTestsGenerator.itShouldSuccessWith(
+      `icon "${icon.name}"`,
+      icon.path
+    )
 
     it(`[snapshot] should render the icon "${icon.name}" correctly`, () => {
       const component = shallowMount({

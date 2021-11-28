@@ -81,26 +81,57 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
     return this
   }
 
-  itShouldSuccessWith(propertyValue: T) {
-    this.testsContainer.addTest(
-      `GIVEN ANY valid ${this.propertyName} WHEN we validate it THEN it SHOULD ALWAYS be valid`,
-      () => {
-        const validator = this.getPropertyValidator() as ValidatorFunction
-        expect(validator(propertyValue)).toBe(true)
-      }
+  itShouldSuccessWith(propertyValue: T): this
+  itShouldSuccessWith(description: string, propertyValue: T): this
+  itShouldSuccessWith(...args: (string | T)[]) {
+    if (args.length === 2) {
+      const [description, propertyValue] = args
+
+      return this.itShouldSuccessWithValue(
+        description as string,
+        propertyValue as T
+      )
+    }
+
+    const [propertyValue] = args as T[]
+
+    return this.itShouldSuccessWithValue(
+      JSON.stringify(propertyValue),
+      propertyValue
     )
+  }
+
+  itShouldFailWith(propertyValue: unknown): this
+  itShouldFailWith(description: string, propertyValue: unknown): this
+  itShouldFailWith(...args: (string | unknown)[]) {
+    if (args.length === 2) {
+      const [description, propertyValue] = args
+
+      return this.itShouldFailWithValue(description as string, propertyValue)
+    }
+
+    const [propertyValue] = args
+
+    return this.itShouldFailWithValue(
+      JSON.stringify(propertyValue),
+      propertyValue
+    )
+  }
+
+  private itShouldSuccessWithValue(description: string, propertyValue: T) {
+    this.testsContainer.addTest(`should success with ${description}`, () => {
+      const validator = this.getPropertyValidator() as ValidatorFunction
+      expect(validator(propertyValue)).toBe(true)
+    })
 
     return this
   }
 
-  itShouldFailWith(description: string, propertyValue: unknown) {
-    this.testsContainer.addTest(
-      `GIVEN ANY ${this.propertyName} with ${description} WHEN we validate it THEN it SHOULD ALWAYS be invalid`,
-      () => {
-        const validator = this.getPropertyValidator() as ValidatorFunction
-        expect(validator(propertyValue)).toBe(false)
-      }
-    )
+  private itShouldFailWithValue(description: string, propertyValue: unknown) {
+    this.testsContainer.addTest(`should fail with ${description}`, () => {
+      const validator = this.getPropertyValidator() as ValidatorFunction
+      expect(validator(propertyValue)).toBe(false)
+    })
 
     return this
   }
