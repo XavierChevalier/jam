@@ -1,3 +1,19 @@
+<script lang="ts">
+  import { defineComponent } from 'vue'
+  import { SizeMixin } from '@/app/mixins/SizeMixin'
+
+  export default defineComponent({
+    mixins: [
+      SizeMixin({
+        xs: 'w-4.5 h-4.5', // TODO
+        sm: 'w-8 h-8',
+        base: 'w-10 h-10', // TODO
+        lg: 'w-7 h-7', // TODO
+      }),
+    ],
+  })
+</script>
+
 <script setup lang="ts">
   import { computed } from 'vue'
   import { string } from 'yup'
@@ -19,21 +35,10 @@
 </script>
 
 <template>
-  <div
-    class="
-      w-10
-      h-10
-      relative
-      after:absolute
-      after:w-12
-      after:h-12
-      after:-top-1
-      after:-left-1
-      after:rounded-full
-      after:border-2
-      after:border-neutral-light
-    "
-  >
-    <img class="rounded-full w-full h-full" :alt="avatarAlt" :src="url" />
-  </div>
+  <img
+    class="box-content p-0.5 rounded-full border-2 border-neutral-light"
+    :class="sizeClass"
+    :alt="avatarAlt"
+    :src="url"
+  />
 </template>

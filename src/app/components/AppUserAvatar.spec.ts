@@ -17,5 +17,15 @@ describe('AppUserAvatar', () => {
     .itShouldFailWith('empty string', '')
     .itShouldFailWith('null', null)
 
+  componentTestsGenerator
+    .property<string>('size')
+    .itShouldBeDefined()
+    .itShouldHaveADefaultValue()
+    .itShouldHaveAValidatorFunction()
+    .itShouldSuccessWith('sm')
+    .itShouldSuccessWith('base')
+    .itShouldSuccessWith('lg')
+    .itShouldFailWith('unknown size type', 'unknown')
+
   componentTestsGenerator.generateTests()
 })

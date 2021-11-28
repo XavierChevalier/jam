@@ -43,7 +43,7 @@
     <div class="flex items-center">
       <UserAvatar :user-name="author.name" :url="author.avatar" />
 
-      <div class="flex flex-col pl-5">
+      <div class="flex flex-col pl-3">
         <span>{{ author.name }}</span>
         <span class="text-neutral">{{ publicationDateDistance }}</span>
       </div>
