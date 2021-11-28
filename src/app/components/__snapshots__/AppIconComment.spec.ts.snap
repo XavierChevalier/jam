@@ -2,7 +2,7 @@
 
 exports[`AppIconComment [snapshot] should render the "IconCommentWithCounter" component correctly 1`] = `
 <span
-  class="flex text-neutral"
+  class="flex items-center text-neutral"
 >
   <anonymous-stub
     path="[object Object]"
@@ -17,7 +17,7 @@ exports[`AppIconComment [snapshot] should render the "IconCommentWithCounter" co
 
 exports[`AppIconComment [snapshot] should render the "JustIconComment" component correctly 1`] = `
 <span
-  class="flex text-neutral"
+  class="flex items-center text-neutral"
 >
   <anonymous-stub
     path="[object Object]"

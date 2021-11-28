@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { mdiHeart, mdiHeartOutline } from '@mdi/js'
-  import Icon from '@/app/components/AppIcon.vue'
+  import AppIcon from '@/app/components/AppIcon.vue'
   import { number } from 'yup'
   import { isPropertyValid } from '@/app/tools/component-properties/PropertyValidator'
 
@@ -22,8 +22,8 @@
 </script>
 
 <template>
-  <span class="flex text-neutral">
-    <Icon
+  <span class="flex items-center text-neutral">
+    <AppIcon
       :class="{ 'text-primary': liked }"
       :path="liked ? mdiHeart : mdiHeartOutline"
     />

@@ -2,7 +2,7 @@
 
 exports[`AppIconLike [snapshot] should render the "JustLikedIcon" component correctly 1`] = `
 <span
-  class="flex text-neutral"
+  class="flex items-center text-neutral"
 >
   <anonymous-stub
     class="text-primary"
@@ -14,7 +14,7 @@ exports[`AppIconLike [snapshot] should render the "JustLikedIcon" component corr
 
 exports[`AppIconLike [snapshot] should render the "JustUnlikedIcon" component correctly 1`] = `
 <span
-  class="flex text-neutral"
+  class="flex items-center text-neutral"
 >
   <anonymous-stub
     class=""
@@ -26,7 +26,7 @@ exports[`AppIconLike [snapshot] should render the "JustUnlikedIcon" component co
 
 exports[`AppIconLike [snapshot] should render the "LikedIconWithCounter" component correctly 1`] = `
 <span
-  class="flex text-neutral"
+  class="flex items-center text-neutral"
 >
   <anonymous-stub
     class="text-primary"
@@ -42,7 +42,7 @@ exports[`AppIconLike [snapshot] should render the "LikedIconWithCounter" compone
 
 exports[`AppIconLike [snapshot] should render the "UnlikedIconWithCounter" component correctly 1`] = `
 <span
-  class="flex text-neutral"
+  class="flex items-center text-neutral"
 >
   <anonymous-stub
     class=""

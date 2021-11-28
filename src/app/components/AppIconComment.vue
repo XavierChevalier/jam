@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { mdiSpeechOutline } from '@/assets/images/icons/MdiExtra'
-  import Icon from '@/app/components/AppIcon.vue'
+  import AppIcon from '@/app/components/AppIcon.vue'
   import { isPropertyValid } from '@/app/tools/component-properties/PropertyValidator'
   import { number } from 'yup'
 
@@ -18,8 +18,8 @@
 </script>
 
 <template>
-  <span class="flex text-neutral">
-    <Icon :path="mdiSpeechOutline" />
+  <span class="flex items-center text-neutral">
+    <AppIcon :path="mdiSpeechOutline" />
     <span v-if="showCounter" class="ml-2">{{ counter }}</span>
   </span>
 </template>
