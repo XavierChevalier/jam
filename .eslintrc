@@ -10,7 +10,8 @@
     "eslint:recommended",
     "@vue/typescript/recommended",
     "@vue/prettier",
-    "@vue/prettier/@typescript-eslint"
+    "@vue/prettier/@typescript-eslint",
+    "plugin:@intlify/vue-i18n/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2021
@@ -22,5 +23,13 @@
   "plugins": [],
   "rules": {
     "vue/valid-define-props": ["off"]
+  },
+  "settings": {
+    "vue-i18n": {
+      "localeDir": "./src/locales/*.json",
+      // Specify the version of `vue-i18n` you are using.
+      // If not specified, the message will be parsed twice.
+      "messageSyntaxVersion": "^9.2.0"
+    }
   }
 }
