@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { fontFamily, borderRadius } = require('tailwindcss/defaultTheme')
+const {
+  fontFamily,
+  borderRadius,
+  borderWidth,
+} = require('tailwindcss/defaultTheme')
 
 module.exports = {
   mode: 'jit',
@@ -36,6 +40,10 @@ module.exports = {
     borderRadius: {
       ...borderRadius,
       DEFAULT: '.35rem',
+    },
+    borderWidth: {
+      ...borderWidth,
+      3: '3px',
     },
   },
 }

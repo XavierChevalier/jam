@@ -12,7 +12,7 @@ exports[`FeedPost [snapshot] should render the "Default" component correctly 1`]
       username="TheBaronless"
     />
     <div
-      class="flex flex-col pl-5"
+      class="flex flex-col pl-3"
     >
       <span>
         TheBaronless
@@ -63,7 +63,7 @@ exports[`FeedPost [snapshot] should render the "WithTrack" component correctly 1
       username="TheBaronless"
     />
     <div
-      class="flex flex-col pl-5"
+      class="flex flex-col pl-3"
     >
       <span>
         TheBaronless

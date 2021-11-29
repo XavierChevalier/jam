@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedPostSummaryItem [snapshot] should render the "Default" component correctly 1`] = `
+<div
+  class="flex gap-3 items-center"
+  publicationdate="Mon Nov 29 2021 01:00:00 GMT+0100 (heure normale d’Europe centrale)"
+>
+  <anonymous-stub
+    size="sm"
+    url="https://picsum.photos/50"
+    username="TheBaronless"
+  />
+  <span>
+    TheBaronless à partagé un morceau
+  </span>
+  <div
+    class="flex relative flex-shrink-0 gap-2 items-center"
+  >
+    <div
+      class="absolute -left-3 w-0 h-0 rounded-full border-3 border-primary"
+    />
+    <span
+      class="text-neutral"
+    >
+      less than a minute
+    </span>
+  </div>
+</div>
+`;
