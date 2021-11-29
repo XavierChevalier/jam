@@ -1,6 +1,3 @@
 {
-  "extends": [
-    "stylelint-config-recommended-vue",
-    "stylelint-config-standard"
-  ]
+  "extends": ["stylelint-config-recommended-vue", "stylelint-config-standard"]
 }

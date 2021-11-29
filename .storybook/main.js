@@ -18,15 +18,17 @@ module.exports = {
     '@storybook/addon-a11y',
   ],
   webpackFinal: async (config) => {
-    useSass(config);
-    registerAliases(config);
+    useSass(config)
+    registerAliases(config)
 
-    return config;
-  }
+    return config
+  },
 }
 
 function registerAliases(config) {
-  Object.keys(aliases).forEach((alias) => config.resolve.alias[alias] = aliases[alias])
+  Object.keys(aliases).forEach(
+    (alias) => (config.resolve.alias[alias] = aliases[alias])
+  )
 }
 
 function useSass(config) {

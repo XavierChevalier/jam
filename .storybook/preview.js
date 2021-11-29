@@ -1,5 +1,5 @@
 // noinspection NpmUsedModulesInstalled
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import tailwindcss from '../tailwind.config'
 import './../src/assets/styles/index.scss'
 
@@ -26,7 +26,7 @@ export const parameters = {
 
 export const decorators = [
   (story) => ({
-    components: {story},
-    template: '<story class="leading-tight" />'
-  })
+    components: { story },
+    template: '<story class="leading-tight" />',
+  }),
 ]
