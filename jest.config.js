@@ -24,7 +24,9 @@ module.exports = {
   globals: {
     'vue-jest': {
       transform: {
-        i18n: 'vue-i18n-jest',
+        // TODO: use 'vue-i18n-jest' instead when version 5 of vue-jest is supported.
+        //  See https://github.com/intlify/vue-i18n-jest/pull/43
+        i18n: require('./build/VueJestTransformCustomBlocks'),
       },
     },
   },
