@@ -19,7 +19,14 @@ module.exports = {
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.ts$': 'ts-jest',
-    '^.+\\.vue$': 'vue-jest',
+    '^.+\\.vue$': '@vue/vue3-jest',
+  },
+  globals: {
+    'vue-jest': {
+      transform: {
+        i18n: 'vue-i18n-jest',
+      },
+    },
   },
 }
 ;(function assertSourceNameMapperAliases() {

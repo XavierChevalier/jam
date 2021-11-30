@@ -20,9 +20,30 @@ module.exports = {
   webpackFinal: async (config) => {
     useSass(config)
     registerAliases(config)
+    useI18nLoader(config);
 
     return config
   },
+}
+
+/**
+ * @see https://vue-i18n.intlify.dev/guide/advanced/sfc.html#vue-i18n-loader
+ */
+function useI18nLoader(config) {
+  config.module.rules.push({
+    resourceQuery: /blockType=i18n/,
+    type: 'javascript/auto',
+    loader: '@intlify/vue-i18n-loader',
+  })
+  config.module.rules.push({
+    test: /\.(json5?|ya?ml)$/,
+    type: 'javascript/auto',
+    // Use `Rule.include` to specify the files of locale messages to be pre-compiled
+    include: [
+      path.resolve(__dirname, './../src/locales'),
+    ],
+    loader: '@intlify/vue-i18n-loader'
+  })
 }
 
 function registerAliases(config) {

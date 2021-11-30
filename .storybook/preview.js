@@ -2,6 +2,10 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import tailwindcss from '../tailwind.config'
 import './../src/assets/styles/index.scss'
+import { app } from '@storybook/vue3';
+import { i18n } from '../src/plugins/VueI18n';
+
+app.use(i18n)
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
