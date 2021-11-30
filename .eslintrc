@@ -24,6 +24,12 @@
   "rules": {
     "vue/valid-define-props": ["off"]
   },
+  "overrides": [{
+    "files": ["*.js"],
+    "rules": {
+      "@typescript-eslint/no-var-requires": ["off"]
+    }
+  }],
   "settings": {
     "vue-i18n": {
       "localeDir": "./src/locales/*.json",

@@ -1,12 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const sourceNameMapper = {
   '@/(.*)$': '<rootDir>/src/$1',
 }
-
 const nodeModulesMapper = {
   '^lodash-es$': 'lodash',
 }
-
 const styleNameMapper = {
   '\\.(css|less|scss|sass)$': '<rootDir>/src/tests/mocks/EmptyObjectMock.js',
 }
@@ -25,10 +22,7 @@ module.exports = {
     '^.+\\.vue$': 'vue-jest',
   },
 }
-
-assertSourceNameMapperAliases()
-
-function assertSourceNameMapperAliases() {
+;(function assertSourceNameMapperAliases() {
   const assert = require('assert')
   const aliases = require('./build/aliases')
 
@@ -38,4 +32,4 @@ function assertSourceNameMapperAliases() {
     'There are more aliases in the build configuration than in the test configuration with Jest. ' +
       'Did you forget to add an equivalent alias in the Jest configuration?'
   )
-}
+})()
