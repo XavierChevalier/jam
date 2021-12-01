@@ -11,17 +11,43 @@ export default {
   },
 } as Meta
 
-export const Default: Story = (args) => ({
+const Template: Story = (args) => ({
   components: { FeedPostSummaryItem },
   setup() {
     return { args }
   },
   template: '<FeedPostSummaryItem v-bind="args" />',
 })
-Default.args = {
+const commonProps = {
+  publicationDate: new Date(),
   author: {
     name: 'TheBaronless',
     avatar: 'https://picsum.photos/50',
   },
+}
+
+export const UserShareSong = Template.bind({})
+UserShareSong.args = {
+  ...commonProps,
   postType: AvailableFeedPostType.userShareSong,
+}
+export const UserShareAlbum = Template.bind({})
+UserShareAlbum.args = {
+  ...commonProps,
+  postType: AvailableFeedPostType.userShareAlbum,
+}
+export const UserSharePlaylist = Template.bind({})
+UserSharePlaylist.args = {
+  ...commonProps,
+  postType: AvailableFeedPostType.userSharePlaylist,
+}
+export const ArtistReleaseSong = Template.bind({})
+ArtistReleaseSong.args = {
+  ...commonProps,
+  postType: AvailableFeedPostType.artistReleaseSong,
+}
+export const ArtistReleaseAlbum = Template.bind({})
+ArtistReleaseAlbum.args = {
+  ...commonProps,
+  postType: AvailableFeedPostType.artistReleaseAlbum,
 }

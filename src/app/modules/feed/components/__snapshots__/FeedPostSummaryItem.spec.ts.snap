@@ -1,6 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeedPostSummaryItem [snapshot] should render the "Default" component correctly 1`] = `
+exports[`FeedPostSummaryItem [snapshot] should render the "ArtistReleaseAlbum" component correctly 1`] = `
+<div
+  class="flex gap-3 items-center"
+>
+  <anonymous-stub
+    size="sm"
+    url="https://picsum.photos/50"
+    username="TheBaronless"
+  />
+  <span>
+    TheBaronless released a new album
+  </span>
+  <div
+    class="flex relative flex-shrink-0 gap-2 items-center ml-auto"
+  >
+    <div
+      class="absolute -left-3 w-0 h-0 rounded-full border-3 border-primary"
+    />
+    <span
+      class="text-neutral"
+    >
+      less than a minute
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FeedPostSummaryItem [snapshot] should render the "ArtistReleaseSong" component correctly 1`] = `
+<div
+  class="flex gap-3 items-center"
+>
+  <anonymous-stub
+    size="sm"
+    url="https://picsum.photos/50"
+    username="TheBaronless"
+  />
+  <span>
+    TheBaronless released a new song
+  </span>
+  <div
+    class="flex relative flex-shrink-0 gap-2 items-center ml-auto"
+  >
+    <div
+      class="absolute -left-3 w-0 h-0 rounded-full border-3 border-primary"
+    />
+    <span
+      class="text-neutral"
+    >
+      less than a minute
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FeedPostSummaryItem [snapshot] should render the "UserShareAlbum" component correctly 1`] = `
+<div
+  class="flex gap-3 items-center"
+>
+  <anonymous-stub
+    size="sm"
+    url="https://picsum.photos/50"
+    username="TheBaronless"
+  />
+  <span>
+    TheBaronless shared an album
+  </span>
+  <div
+    class="flex relative flex-shrink-0 gap-2 items-center ml-auto"
+  >
+    <div
+      class="absolute -left-3 w-0 h-0 rounded-full border-3 border-primary"
+    />
+    <span
+      class="text-neutral"
+    >
+      less than a minute
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FeedPostSummaryItem [snapshot] should render the "UserSharePlaylist" component correctly 1`] = `
+<div
+  class="flex gap-3 items-center"
+>
+  <anonymous-stub
+    size="sm"
+    url="https://picsum.photos/50"
+    username="TheBaronless"
+  />
+  <span>
+    TheBaronless shared a playlist
+  </span>
+  <div
+    class="flex relative flex-shrink-0 gap-2 items-center ml-auto"
+  >
+    <div
+      class="absolute -left-3 w-0 h-0 rounded-full border-3 border-primary"
+    />
+    <span
+      class="text-neutral"
+    >
+      less than a minute
+    </span>
+  </div>
+</div>
+`;
+
+exports[`FeedPostSummaryItem [snapshot] should render the "UserShareSong" component correctly 1`] = `
 <div
   class="flex gap-3 items-center"
 >
@@ -13,7 +121,7 @@ exports[`FeedPostSummaryItem [snapshot] should render the "Default" component co
     TheBaronless shared a song
   </span>
   <div
-    class="flex relative flex-shrink-0 gap-2 items-center"
+    class="flex relative flex-shrink-0 gap-2 items-center ml-auto"
   >
     <div
       class="absolute -left-3 w-0 h-0 rounded-full border-3 border-primary"

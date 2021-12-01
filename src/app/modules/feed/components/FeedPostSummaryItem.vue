@@ -1,18 +1,15 @@
 <script setup lang="ts">
   import AppUserAvatar from '@/app/components/AppUserAvatar.vue'
   import { localeFormatDistance } from '@/app/tools/date/Date'
-  import { PropType } from 'vue'
+  import { computed, PropType } from 'vue'
   import { Author } from '@/app/modules/feed/models/Author'
   import { isPropertyValid } from '@/app/tools/component-properties/PropertyValidator'
   import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
   import { useI18n } from 'vue-i18n'
 
-  const publicationDate = localeFormatDistance(new Date(), new Date(), {
-    addSuffix: false,
-  })
   const { t } = useI18n()
 
-  defineProps({
+  const props = defineProps({
     author: {
       type: Object as PropType<Author>,
       required: true,
@@ -24,18 +21,27 @@
       validator: (value: string) =>
         Object.keys(AvailableFeedPostType).includes(value),
     },
+    publicationDate: {
+      type: Date,
+      required: true,
+    },
   })
+  const publicationDateDistance = computed(() =>
+    localeFormatDistance(props.publicationDate, new Date(), {
+      addSuffix: false,
+    })
+  )
 </script>
 
 <template>
   <div class="flex gap-3 items-center">
     <AppUserAvatar size="sm" :user-name="author.name" :url="author.avatar" />
     <span>{{ t(`postType.${postType}`, { authorName: author.name }) }}</span>
-    <div class="flex relative flex-shrink-0 gap-2 items-center">
+    <div class="flex relative flex-shrink-0 gap-2 items-center ml-auto">
       <div
         class="absolute -left-3 w-0 h-0 rounded-full border-3 border-primary"
       />
-      <span class="text-neutral">{{ publicationDate }}</span>
+      <span class="text-neutral">{{ publicationDateDistance }}</span>
     </div>
   </div>
 </template>

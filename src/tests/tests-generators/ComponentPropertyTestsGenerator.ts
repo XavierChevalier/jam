@@ -10,6 +10,13 @@ export type PropOptions<T = unknown> = Readonly<{
   default?: T | null | undefined | (() => T | null | undefined)
   validator?: ValidatorFunction<T>
 }>
+type PropertyTypes =
+  | typeof String
+  | typeof Boolean
+  | typeof Number
+  | typeof Date
+  | typeof Object
+  | typeof Symbol
 
 export class PropertyTestsGenerator<T> implements TestsGenerator {
   private readonly testsContainer = new TestsGeneratorContainer()
@@ -28,8 +35,8 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
     return this
   }
 
-  itShouldBeTypeOf<T>(type: PropType<T>) {
-    this.testsContainer.addTest('should be type of', () => {
+  itShouldBeTypeOf<T extends PropertyTypes>(type: T) {
+    this.testsContainer.addTest(`should be type of ${type.name}`, () => {
       expect(this.propertyDefinition.type).toBe(type)
     })
 

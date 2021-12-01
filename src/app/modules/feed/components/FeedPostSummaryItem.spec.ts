@@ -1,7 +1,13 @@
 import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import FeedPostSummaryItem from './FeedPostSummaryItem.vue'
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { Default } from '@/app/modules/feed/components/FeedPostSummaryItem.stories'
+import {
+  ArtistReleaseAlbum,
+  ArtistReleaseSong,
+  UserShareAlbum,
+  UserSharePlaylist,
+  UserShareSong,
+} from '@/app/modules/feed/components/FeedPostSummaryItem.stories'
 import { Author } from '@/app/modules/feed/models/Author'
 import { omit } from 'lodash-es'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
@@ -9,7 +15,13 @@ import { shallowMount } from '@vue/test-utils'
 import { changeLocale, i18n } from '@/plugins/VueI18n'
 
 describe('FeedPostSummaryItem', () => {
-  generateStorybookSnapshotTests({ Default })
+  generateStorybookSnapshotTests({
+    UserShareSong,
+    UserShareAlbum,
+    UserSharePlaylist,
+    ArtistReleaseSong,
+    ArtistReleaseAlbum,
+  })
 
   const componentTestsGenerator = new ComponentTestsGenerator(
     FeedPostSummaryItem
@@ -38,6 +50,12 @@ describe('FeedPostSummaryItem', () => {
     .itShouldSuccessWith('artistReleaseSong')
     .itShouldSuccessWith('artistReleaseAlbum')
 
+  componentTestsGenerator
+    .property<Date>('publicationDate')
+    .itShouldBeDefined()
+    .itShouldBeTypeOf(Date)
+    .itShouldBeRequired()
+
   componentTestsGenerator.generateTests()
 
   it.each`
@@ -60,6 +78,7 @@ describe('FeedPostSummaryItem', () => {
         global: { plugins: [i18n] },
         props: {
           author,
+          publicationDate: new Date(),
           postType,
         },
       })
