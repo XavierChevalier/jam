@@ -1,6 +1,7 @@
 import { Story as StorybookStory, StoryContext } from '@storybook/vue3'
 import { ComponentOptionsWithObjectProps, ComponentPublicInstance } from 'vue'
 import { shallowMount, VueWrapper } from '@vue/test-utils'
+import { i18n } from '@/plugins/VueI18n'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Story = StorybookStory<any>
@@ -44,6 +45,7 @@ function generateStorybookSnapshotTest(storyName: StoryName, story: Story) {
     const wrapper = shallowMount(component, {
       global: {
         stubs: component.components,
+        plugins: [i18n],
       },
     })
 

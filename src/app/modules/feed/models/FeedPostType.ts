@@ -1,4 +1,7 @@
 export enum AvailableFeedPostType {
-  newSingle = 'newSingle',
-  newAlbum = 'newAlbum',
+  userShareSong = 'userShareSong',
+  userShareAlbum = 'userShareAlbum',
+  userSharePlaylist = 'userSharePlaylist',
+  artistReleaseSong = 'artistReleaseSong',
+  artistReleaseAlbum = 'artistReleaseAlbum',
 }

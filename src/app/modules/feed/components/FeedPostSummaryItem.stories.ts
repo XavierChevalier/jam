@@ -1,6 +1,7 @@
 import FeedPostSummaryItem from './FeedPostSummaryItem.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
+import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
 
 export default {
   title: 'Feed/FeedPostSummaryItem',
@@ -22,6 +23,5 @@ Default.args = {
     name: 'TheBaronless',
     avatar: 'https://picsum.photos/50',
   },
-  publicationDate: new Date('2021-11-29'),
-  postType: 'newSingle',
+  postType: AvailableFeedPostType.userShareSong,
 }

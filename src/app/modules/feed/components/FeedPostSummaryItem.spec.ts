@@ -5,6 +5,8 @@ import { Default } from '@/app/modules/feed/components/FeedPostSummaryItem.stori
 import { Author } from '@/app/modules/feed/models/Author'
 import { omit } from 'lodash-es'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
+import { shallowMount } from '@vue/test-utils'
+import { changeLocale, i18n } from '@/plugins/VueI18n'
 
 describe('FeedPostSummaryItem', () => {
   generateStorybookSnapshotTests({ Default })
@@ -14,7 +16,7 @@ describe('FeedPostSummaryItem', () => {
   )
   componentTestsGenerator.itShouldBeDefined()
 
-  const author = { name: 'Test', avatar: 'https://picsum.photos/50' }
+  const author = { name: 'John Gomm', avatar: 'https://picsum.photos/50' }
   componentTestsGenerator
     .property<Author>('author')
     .itShouldBeDefined()
@@ -30,8 +32,39 @@ describe('FeedPostSummaryItem', () => {
     .itShouldBeTypeOf(String)
     .itShouldBeRequired()
     .itShouldHaveAValidatorFunction()
-    .itShouldSuccessWith('newSingle')
-    .itShouldSuccessWith('newAlbum')
+    .itShouldSuccessWith('userShareSong')
+    .itShouldSuccessWith('userShareAlbum')
+    .itShouldSuccessWith('userSharePlaylist')
+    .itShouldSuccessWith('artistReleaseSong')
+    .itShouldSuccessWith('artistReleaseAlbum')
 
   componentTestsGenerator.generateTests()
+
+  it.each`
+    postType                                    | lang    | expectedDisplayText
+    ${AvailableFeedPostType.userShareSong}      | ${'fr'} | ${'John Gomm a partagé un morceau'}
+    ${AvailableFeedPostType.userShareSong}      | ${'en'} | ${'John Gomm shared a song'}
+    ${AvailableFeedPostType.userShareAlbum}     | ${'fr'} | ${'John Gomm a partagé un album'}
+    ${AvailableFeedPostType.userShareAlbum}     | ${'en'} | ${'John Gomm shared an album'}
+    ${AvailableFeedPostType.userSharePlaylist}  | ${'fr'} | ${'John Gomm a partagé une playlist'}
+    ${AvailableFeedPostType.userSharePlaylist}  | ${'en'} | ${'John Gomm shared a playlist'}
+    ${AvailableFeedPostType.artistReleaseSong}  | ${'fr'} | ${'John Gomm a sortie un nouveau morceau'}
+    ${AvailableFeedPostType.artistReleaseSong}  | ${'en'} | ${'John Gomm released a new song'}
+    ${AvailableFeedPostType.artistReleaseAlbum} | ${'fr'} | ${'John Gomm a sortie un nouvel album'}
+    ${AvailableFeedPostType.artistReleaseAlbum} | ${'en'} | ${'John Gomm released a new album'}
+  `(
+    'should display "$expectedDisplayText" on "$postType" postType',
+    ({ postType, lang, expectedDisplayText }) => {
+      changeLocale(lang)
+      const wrapper = shallowMount(FeedPostSummaryItem, {
+        global: { plugins: [i18n] },
+        props: {
+          author,
+          postType,
+        },
+      })
+
+      expect(wrapper.text()).toContain(expectedDisplayText)
+    }
+  )
 })
