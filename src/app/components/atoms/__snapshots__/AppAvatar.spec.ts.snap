@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppUserAvatar [snapshot] should render the "PicsumPhoto" component correctly 1`] = `
+exports[`AppAvatar [snapshot] should render the "PicsumPhoto" component correctly 1`] = `
 <img
   alt="The TheBaronless's avatar"
   class="box-content p-0.5 rounded-full border-2 border-neutral-light w-10 h-10"

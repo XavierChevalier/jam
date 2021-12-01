@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import AppUserAvatar from '@/app/components/atoms/AppUserAvatar.vue'
+  import AppAvatar from '@/app/components/atoms/AppAvatar.vue'
   import { localeFormatDistance } from '@/app/tools/date/Date'
   import { computed, PropType } from 'vue'
   import { Author } from '@/app/modules/feed/models/Author'
@@ -35,7 +35,7 @@
 
 <template>
   <div class="flex gap-3 items-center">
-    <AppUserAvatar size="sm" :user-name="author.name" :url="author.avatar" />
+    <AppAvatar size="sm" :user-name="author.name" :url="author.avatar" />
     <span>{{ t(`postType.${postType}`, { authorName: author.name }) }}</span>
     <div class="flex relative flex-shrink-0 gap-2 items-center ml-auto">
       <div

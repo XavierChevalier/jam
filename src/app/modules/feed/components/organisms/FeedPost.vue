@@ -2,7 +2,7 @@
   import { computed, PropType } from 'vue'
   import { localeFormatDistance } from '@/app/tools/date/Date'
   import { Author } from '@/app/modules/feed/models/Author'
-  import UserAvatar from '@/app/components/atoms/AppUserAvatar.vue'
+  import AppAvatar from '@/app/components/atoms/AppAvatar.vue'
   import IconLike from '@/app/components/molecules/AppIconLike.vue'
   import IconComment from '@/app/components/molecules/AppIconComment.vue'
   import Icon from '@/app/components/atoms/AppIcon.vue'
@@ -41,7 +41,7 @@
 <template>
   <div class="p-5 bg-white rounded group">
     <div class="flex items-center">
-      <UserAvatar :user-name="author.name" :url="author.avatar" />
+      <AppAvatar :user-name="author.name" :url="author.avatar" />
 
       <div class="flex flex-col pl-3">
         <span>{{ author.name }}</span>
