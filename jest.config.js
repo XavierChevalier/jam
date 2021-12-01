@@ -15,6 +15,7 @@ module.exports = {
     ...sourceNameMapper,
   },
   setupFiles: ['./src/tests/jest.setup.ts'],
+  setupFilesAfterEnv: ['./src/tests/jest.setup.after-env.ts'],
   moduleFileExtensions: ['vue', 'ts', 'js', 'json'],
   testEnvironment: 'jsdom',
   transform: {
