@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TrackCover [snapshot] should render the "Default" component correctly 1`] = `
+exports[`TrackCover stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
 <img
   alt="The track cover of G.O.A.T. • Polyphia"
   class="rounded w-16 h-16"
@@ -8,7 +8,7 @@ exports[`TrackCover [snapshot] should render the "Default" component correctly 1
 />
 `;
 
-exports[`TrackCover [snapshot] should render the "SmallSize" component correctly 1`] = `
+exports[`TrackCover stories snapshots [snapshot] should render the "SmallSize" component story correctly 1`] = `
 <img
   alt="The track cover of G.O.A.T. • Polyphia"
   class="rounded w-9 h-9"

@@ -1,62 +1,43 @@
-import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import FeedPostSummaryItem from './FeedPostSummaryItem.vue'
-import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import {
-  ArtistReleaseAlbum,
-  ArtistReleaseSong,
-  UserShareAlbum,
-  UserSharePlaylist,
-  UserShareSong,
-} from '@/app/modules/feed/components/molecules/FeedPostSummaryItem.stories'
+import * as Stories from '@/app/modules/feed/components/molecules/FeedPostSummaryItem.stories'
 import { Author } from '@/app/modules/feed/models/Author'
 import { omit } from 'lodash-es'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
 import { changeLocale } from '@/plugins/VueI18n'
 import { shallowMountWithPlugins } from '@/tests/tools/MountWithPlugins'
+import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
 describe('FeedPostSummaryItem', () => {
-  generateStorybookSnapshotTests({
-    UserShareSong,
-    UserShareAlbum,
-    UserSharePlaylist,
-    ArtistReleaseSong,
-    ArtistReleaseAlbum,
-  })
-
-  const componentTestsGenerator = new ComponentTestsGenerator(
-    FeedPostSummaryItem
-  )
-  componentTestsGenerator.itShouldBeDefined()
-
-  const author = { name: 'John Gomm', avatar: 'https://picsum.photos/50' }
-  componentTestsGenerator
-    .property<Author>('author')
-    .itShouldBeDefined()
-    .itShouldBeRequired()
-    .itShouldHaveAValidatorFunction()
-    .itShouldFailWith('missing name', omit(author, ['name']))
-    .itShouldFailWith('a null avatar', { name: 'Test', avatar: null })
-    .itShouldFailWith('a null name and avatar', { name: null, avatar: null })
-
-  componentTestsGenerator
-    .property<keyof typeof AvailableFeedPostType>('postType')
-    .itShouldBeDefined()
-    .itShouldBeTypeOf(String)
-    .itShouldBeRequired()
-    .itShouldHaveAValidatorFunction()
-    .itShouldSuccessWith('userShareSong')
-    .itShouldSuccessWith('userShareAlbum')
-    .itShouldSuccessWith('userSharePlaylist')
-    .itShouldSuccessWith('artistReleaseSong')
-    .itShouldSuccessWith('artistReleaseAlbum')
-
-  componentTestsGenerator
-    .property<Date>('publicationDate')
-    .itShouldBeDefined()
-    .itShouldBeTypeOf(Date)
-    .itShouldBeRequired()
-
-  componentTestsGenerator.generateTests()
+  StorybookTestsGenerator.fromStoriesExports(Stories)
+    .snapshotEachStories()
+    .property<Author>('author', (property) => {
+      const author = { name: 'John Gomm', avatar: 'https://picsum.photos/50' }
+      property
+        .itShouldBeDefined()
+        .itShouldBeRequired()
+        .itShouldHaveAValidatorFunction()
+        .itShouldFailWith('missing name', omit(author, ['name']))
+        .itShouldFailWith('a null avatar', { name: 'Test', avatar: null })
+        .itShouldFailWith('a null name and avatar', {
+          name: null,
+          avatar: null,
+        })
+    })
+    .property<keyof typeof AvailableFeedPostType>('postType', (property) => {
+      property
+        .itShouldBeDefined()
+        .itShouldBeTypeOf(String)
+        .itShouldBeRequired()
+        .itShouldHaveAValidatorFunction()
+        .itShouldSuccessWith('userShareSong')
+        .itShouldSuccessWith('userShareAlbum')
+        .itShouldSuccessWith('userSharePlaylist')
+        .itShouldSuccessWith('artistReleaseSong')
+        .itShouldSuccessWith('artistReleaseAlbum')
+    })
+    .property<Date>('publicationDate', (property) => {
+      property.itShouldBeDefined().itShouldBeTypeOf(Date).itShouldBeRequired()
+    })
 
   it.each`
     postType                                    | lang    | expectedDisplayText
@@ -76,7 +57,7 @@ describe('FeedPostSummaryItem', () => {
       changeLocale(lang)
       const wrapper = shallowMountWithPlugins(FeedPostSummaryItem, {
         props: {
-          author,
+          author: { name: 'John Gomm', avatar: 'https://picsum.photos/50' },
           publicationDate: new Date(),
           postType,
         },

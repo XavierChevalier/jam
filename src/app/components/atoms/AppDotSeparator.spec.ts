@@ -1,6 +1,6 @@
-import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { Default } from './AppDotSeparator.stories'
+import * as Stories from './AppDotSeparator.stories'
+import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
 describe('AppDotSeparator', () => {
-  generateStorybookSnapshotTests({ Default })
+  StorybookTestsGenerator.fromStoriesExports(Stories).snapshotEachStories()
 })

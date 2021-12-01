@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PlayerDocked [snapshot] should render the "Default" component correctly 1`] = `
+exports[`PlayerDocked stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
 <div>
   <div
     class="text-xs flex px-5 py-3 rounded shadow-lg bg-primary-light items-center"
@@ -49,7 +49,7 @@ exports[`PlayerDocked [snapshot] should render the "Default" component correctly
 </div>
 `;
 
-exports[`PlayerDocked [snapshot] should render the "ListeningOnDesktop" component correctly 1`] = `
+exports[`PlayerDocked stories snapshots [snapshot] should render the "ListeningOnDesktop" component story correctly 1`] = `
 <div>
   <div
     class="text-xs flex px-5 py-3 rounded shadow-lg bg-primary-light items-center"

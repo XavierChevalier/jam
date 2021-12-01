@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppIconComment [snapshot] should render the "IconCommentWithCounter" component correctly 1`] = `
+exports[`AppIconComment stories snapshots [snapshot] should render the "IconCommentWithCounter" component story correctly 1`] = `
 <span
   class="flex items-center text-neutral"
 >
@@ -15,7 +15,7 @@ exports[`AppIconComment [snapshot] should render the "IconCommentWithCounter" co
 </span>
 `;
 
-exports[`AppIconComment [snapshot] should render the "JustIconComment" component correctly 1`] = `
+exports[`AppIconComment stories snapshots [snapshot] should render the "JustIconComment" component story correctly 1`] = `
 <span
   class="flex items-center text-neutral"
 >

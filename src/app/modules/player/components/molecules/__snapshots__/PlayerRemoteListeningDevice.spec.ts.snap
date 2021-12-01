@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PlayerRemoteListeningDevice [snapshot] should render the "ListeningOnDesktop" component correctly 1`] = `
+exports[`PlayerRemoteListeningDevice stories snapshots [snapshot] should render the "ListeningOnDesktop" component story correctly 1`] = `
 <span
   class="text-primary"
 >

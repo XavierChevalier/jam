@@ -1,16 +1,11 @@
-import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import FeedPostSummarySeeMoreButton from '../molecules/FeedPostSummarySeeMoreButton.vue'
 import FeedPostSummary from './FeedPostSummary.vue'
-import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { With3Items } from '@/app/modules/feed/components/organisms/FeedPostSummary.stories'
+import * as Stories from '@/app/modules/feed/components/organisms/FeedPostSummary.stories'
 import { shallowMount } from '@vue/test-utils'
+import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
 describe('FeedPostSummary', () => {
-  generateStorybookSnapshotTests({ With3Items })
-
-  const componentTestsGenerator = new ComponentTestsGenerator(FeedPostSummary)
-  componentTestsGenerator.itShouldBeDefined()
-  componentTestsGenerator.generateTests()
+  StorybookTestsGenerator.fromStoriesExports(Stories).snapshotEachStories()
 
   it('should contains the button to see all news', () => {
     const wrapper = shallowMount(FeedPostSummary)

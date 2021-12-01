@@ -1,32 +1,16 @@
-import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import AppIconLike from './AppIconLike.vue'
-import {
-  JustLikedIcon,
-  JustUnlikedIcon,
-  LikedIconWithCounter,
-  UnlikedIconWithCounter,
-} from '@/app/components/molecules/AppIconLike.stories'
-import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
+import * as Stories from '@/app/components/molecules/AppIconLike.stories'
+import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
 describe('AppIconLike', () => {
-  generateStorybookSnapshotTests({
-    JustUnlikedIcon,
-    JustLikedIcon,
-    UnlikedIconWithCounter,
-    LikedIconWithCounter,
-  })
-
-  const componentTestsGenerator = new ComponentTestsGenerator(AppIconLike)
-  componentTestsGenerator.itShouldBeDefined()
-
-  componentTestsGenerator
-    .property<number>('counter')
-    .itShouldBeDefined()
-    .itShouldHaveAValidatorFunction()
-    .itShouldSuccessWith(0)
-    .itShouldSuccessWith(1)
-    .itShouldFailWith('negative number', -1)
-    .itShouldFailWith('null', null)
-
-  componentTestsGenerator.generateTests()
+  StorybookTestsGenerator.fromStoriesExports(Stories)
+    .snapshotEachStories()
+    .property<number>('counter', (property) => {
+      property
+        .itShouldBeDefined()
+        .itShouldHaveAValidatorFunction()
+        .itShouldSuccessWith(0)
+        .itShouldSuccessWith(1)
+        .itShouldFailWith('negative number', -1)
+        .itShouldFailWith('null', null)
+    })
 })

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppIconLike [snapshot] should render the "JustLikedIcon" component correctly 1`] = `
+exports[`AppIconLike stories snapshots [snapshot] should render the "JustLikedIcon" component story correctly 1`] = `
 <span
   class="flex items-center text-neutral"
 >
@@ -12,7 +12,7 @@ exports[`AppIconLike [snapshot] should render the "JustLikedIcon" component corr
 </span>
 `;
 
-exports[`AppIconLike [snapshot] should render the "JustUnlikedIcon" component correctly 1`] = `
+exports[`AppIconLike stories snapshots [snapshot] should render the "JustUnlikedIcon" component story correctly 1`] = `
 <span
   class="flex items-center text-neutral"
 >
@@ -24,7 +24,7 @@ exports[`AppIconLike [snapshot] should render the "JustUnlikedIcon" component co
 </span>
 `;
 
-exports[`AppIconLike [snapshot] should render the "LikedIconWithCounter" component correctly 1`] = `
+exports[`AppIconLike stories snapshots [snapshot] should render the "LikedIconWithCounter" component story correctly 1`] = `
 <span
   class="flex items-center text-neutral"
 >
@@ -40,7 +40,7 @@ exports[`AppIconLike [snapshot] should render the "LikedIconWithCounter" compone
 </span>
 `;
 
-exports[`AppIconLike [snapshot] should render the "UnlikedIconWithCounter" component correctly 1`] = `
+exports[`AppIconLike stories snapshots [snapshot] should render the "UnlikedIconWithCounter" component story correctly 1`] = `
 <span
   class="flex items-center text-neutral"
 >

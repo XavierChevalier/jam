@@ -1,19 +1,12 @@
-import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
 import FeedPostSummarySeeMoreButton from './FeedPostSummarySeeMoreButton.vue'
-import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { Default } from '@/app/modules/feed/components/molecules/FeedPostSummarySeeMoreButton.stories'
+import * as Stories from '@/app/modules/feed/components/molecules/FeedPostSummarySeeMoreButton.stories'
 import { changeLocale } from '@/plugins/VueI18n'
 import AppIcon from '@/app/components/atoms/AppIcon.vue'
 import { shallowMountWithPlugins } from '@/tests/tools/MountWithPlugins'
+import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
 describe('FeedPostSummarySeeMoreButton', () => {
-  generateStorybookSnapshotTests({ Default })
-
-  const componentTestsGenerator = new ComponentTestsGenerator(
-    FeedPostSummarySeeMoreButton
-  )
-  componentTestsGenerator.itShouldBeDefined()
-  componentTestsGenerator.generateTests()
+  StorybookTestsGenerator.fromStoriesExports(Stories).snapshotEachStories()
 
   it('should contains 2 icons', () => {
     const wrapper = shallowMountWithPlugins(FeedPostSummarySeeMoreButton)

@@ -40,7 +40,7 @@ function getUnwrappedElement(wrapper: VueWrapper<ComponentPublicInstance>) {
 }
 
 function generateStorybookSnapshotTest(storyName: StoryName, story: Story) {
-  test(`[snapshot] should render the "${storyName}" component correctly`, () => {
+  test(`[snapshot] should render the "${storyName}" component story correctly`, () => {
     const component = createComponentFromStory(story)
     const wrapper = shallowMountWithPlugins(component, {
       global: { stubs: component.components },

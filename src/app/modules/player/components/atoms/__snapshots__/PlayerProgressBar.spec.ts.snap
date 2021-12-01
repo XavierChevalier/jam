@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PlayerProgressBar [snapshot] should render the "Progress0" component correctly 1`] = `
+exports[`PlayerProgressBar stories snapshots [snapshot] should render the "Progress0" component story correctly 1`] = `
 <div
   class="overflow-hidden h-1 rounded-full bg-primary/20"
 >
@@ -11,7 +11,7 @@ exports[`PlayerProgressBar [snapshot] should render the "Progress0" component co
 </div>
 `;
 
-exports[`PlayerProgressBar [snapshot] should render the "Progress42" component correctly 1`] = `
+exports[`PlayerProgressBar stories snapshots [snapshot] should render the "Progress42" component story correctly 1`] = `
 <div
   class="overflow-hidden h-1 rounded-full bg-primary/20"
 >
@@ -22,7 +22,7 @@ exports[`PlayerProgressBar [snapshot] should render the "Progress42" component c
 </div>
 `;
 
-exports[`PlayerProgressBar [snapshot] should render the "Progress50" component correctly 1`] = `
+exports[`PlayerProgressBar stories snapshots [snapshot] should render the "Progress50" component story correctly 1`] = `
 <div
   class="overflow-hidden h-1 rounded-full bg-primary/20"
 >
@@ -33,7 +33,7 @@ exports[`PlayerProgressBar [snapshot] should render the "Progress50" component c
 </div>
 `;
 
-exports[`PlayerProgressBar [snapshot] should render the "Progress100" component correctly 1`] = `
+exports[`PlayerProgressBar stories snapshots [snapshot] should render the "Progress100" component story correctly 1`] = `
 <div
   class="overflow-hidden h-1 rounded-full bg-primary/20"
 >

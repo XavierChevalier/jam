@@ -1,6 +1,4 @@
 import { PropType } from 'vue'
-import { TestsGeneratorContainer } from '@/tests/tests-generators/TestsGeneratorContainer'
-import { TestsGenerator } from '@/tests/tests-generators/TestsGenerator'
 
 // From "node_modules/@vue/runtime-core/dist/runtime-core.d.ts"
 type ValidatorFunction<T = unknown> = (value: T) => boolean
@@ -18,16 +16,14 @@ type PropertyTypes =
   | typeof Object
   | typeof Symbol
 
-export class PropertyTestsGenerator<T> implements TestsGenerator {
-  private readonly testsContainer = new TestsGeneratorContainer()
-
+export class PropertyTestsGenerator<T> {
   constructor(
     private readonly propertyName: string,
     private readonly propertyDefinition: PropOptions
   ) {}
 
   itShouldBeDefined() {
-    this.testsContainer.addTest('should be defined', () => {
+    it('should be defined', () => {
       expect(this.propertyDefinition).toBeDefined()
       expect(typeof this.propertyDefinition).toBe('object')
     })
@@ -36,7 +32,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   itShouldBeTypeOf<T extends PropertyTypes>(type: T) {
-    this.testsContainer.addTest(`should be type of ${type.name}`, () => {
+    it(`should be type of ${type.name}`, () => {
       expect(this.propertyDefinition.type).toBe(type)
     })
 
@@ -44,7 +40,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   itShouldBeRequired() {
-    this.testsContainer.addTest('should be required', () => {
+    it('should be required', () => {
       expect(this.propertyDefinition.required).toBe(true)
     })
 
@@ -52,7 +48,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   itShouldNotBeRequired() {
-    this.testsContainer.addTest('should not be required', () => {
+    it('should not be required', () => {
       expect(this.propertyDefinition.required).toBe(false)
     })
 
@@ -60,7 +56,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   itShouldHaveADefaultValue() {
-    this.testsContainer.addTest('should have a default value', () => {
+    it('should have a default value', () => {
       const defaultValue =
         typeof this.propertyDefinition.default === 'function'
           ? typeof this.propertyDefinition.default()
@@ -72,7 +68,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   itShouldNotHaveADefaultValue() {
-    this.testsContainer.addTest('should not have a default value', () => {
+    it('should not have a default value', () => {
       expect(this.propertyDefinition.default).toBeUndefined()
     })
 
@@ -80,7 +76,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   itShouldHaveAValidatorFunction() {
-    this.testsContainer.addTest('should have a validator', () => {
+    it('should have a validator', () => {
       const validator = this.getPropertyValidator()
       expect(typeof validator).toBe('function')
     })
@@ -126,7 +122,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   private itShouldSuccessWithValue(description: string, propertyValue: T) {
-    this.testsContainer.addTest(`should success with ${description}`, () => {
+    it(`should success with ${description}`, () => {
       const validator = this.getPropertyValidator() as ValidatorFunction
       expect(validator(propertyValue)).toBe(true)
     })
@@ -135,7 +131,7 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
   }
 
   private itShouldFailWithValue(description: string, propertyValue: unknown) {
-    this.testsContainer.addTest(`should fail with ${description}`, () => {
+    it(`should fail with ${description}`, () => {
       const validator = this.getPropertyValidator() as ValidatorFunction
       expect(validator(propertyValue)).toBe(false)
     })
@@ -145,9 +141,5 @@ export class PropertyTestsGenerator<T> implements TestsGenerator {
 
   private getPropertyValidator() {
     return this.propertyDefinition.validator
-  }
-
-  generateTests() {
-    this.testsContainer.generateTests(`property #${this.propertyName}`)
   }
 }

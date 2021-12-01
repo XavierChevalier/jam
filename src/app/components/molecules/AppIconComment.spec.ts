@@ -1,20 +1,15 @@
-import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import AppIconComment from './AppIconComment.vue'
-import {
-  IconCommentWithCounter,
-  JustIconComment,
-} from '@/app/components/molecules/AppIconComment.stories'
-import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
+import * as Stories from '@/app/components/molecules/AppIconComment.stories'
+import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
 describe('AppIconComment', () => {
-  generateStorybookSnapshotTests({ JustIconComment, IconCommentWithCounter })
-
-  new ComponentTestsGenerator(AppIconComment)
-    .itShouldBeDefined()
-    .property<number>('counter')
-    .itShouldBeDefined()
-    .itShouldHaveAValidatorFunction()
-    .itShouldSuccessWith(0)
-    .itShouldSuccessWith(10)
-    .itShouldFailWith('negative number', -1)
+  StorybookTestsGenerator.fromStoriesExports(Stories)
+    .snapshotEachStories()
+    .property<number>('counter', (property) => {
+      property
+        .itShouldBeDefined()
+        .itShouldHaveAValidatorFunction()
+        .itShouldSuccessWith(0)
+        .itShouldSuccessWith(10)
+        .itShouldFailWith('negative number', -1)
+    })
 })

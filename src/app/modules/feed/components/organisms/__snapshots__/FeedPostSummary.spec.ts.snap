@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeedPostSummary [snapshot] should render the "With3Items" component correctly 1`] = `
+exports[`FeedPostSummary stories snapshots [snapshot] should render the "With3Items" component story correctly 1`] = `
 <div
   class="flex flex-col gap-3 bg-white rounded p-2"
 >

@@ -1,21 +1,10 @@
-import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { ListeningOnDesktop } from './PlayerRemoteListeningDevice.stories'
-import PlayerRemoteListeningDevice from './PlayerRemoteListeningDevice.vue'
-import { ComponentTestsGenerator } from '@/tests/tests-generators/ComponentTestsGenerator'
+import * as Stories from './PlayerRemoteListeningDevice.stories'
+import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
 describe('PlayerRemoteListeningDevice', () => {
-  generateStorybookSnapshotTests({ ListeningOnDesktop })
-
-  const componentTests = new ComponentTestsGenerator(
-    PlayerRemoteListeningDevice
-  )
-  componentTests.itShouldBeDefined()
-
-  componentTests
-    .property<string>('remoteDeviceName')
-    .itShouldBeDefined()
-    .itShouldBeRequired()
-    .itShouldBeTypeOf(String)
-
-  componentTests.generateTests()
+  StorybookTestsGenerator.fromStoriesExports(Stories)
+    .snapshotEachStories()
+    .property<string>('remoteDeviceName', (property) => {
+      property.itShouldBeDefined().itShouldBeRequired().itShouldBeTypeOf(String)
+    })
 })
