@@ -3,7 +3,7 @@ import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 
 export default {
-  title: 'Player/Atoms/PlayerProgressBar',
+  title: 'Atoms/Player/PlayerProgressBar',
   component: PlayerProgressBar,
 } as Meta
 

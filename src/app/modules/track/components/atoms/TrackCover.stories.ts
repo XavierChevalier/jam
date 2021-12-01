@@ -4,7 +4,7 @@ import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { TrackOfTrackCover } from '@/app/modules/track/models/TrackCover'
 
 export default {
-  title: 'Player/Atoms/TrackCover',
+  title: 'Atoms/Player/TrackCover',
   component: TrackCover,
 } as Meta
 
