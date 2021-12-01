@@ -11,8 +11,8 @@ import {
 import { Author } from '@/app/modules/feed/models/Author'
 import { omit } from 'lodash-es'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
-import { shallowMount } from '@vue/test-utils'
-import { changeLocale, i18n } from '@/plugins/VueI18n'
+import { changeLocale } from '@/plugins/VueI18n'
+import { shallowMountWithPlugins } from '@/tests/tools/MountWithPlugins'
 
 describe('FeedPostSummaryItem', () => {
   generateStorybookSnapshotTests({
@@ -74,8 +74,7 @@ describe('FeedPostSummaryItem', () => {
     'should display "$expectedDisplayText" on "$postType" postType',
     ({ postType, lang, expectedDisplayText }) => {
       changeLocale(lang)
-      const wrapper = shallowMount(FeedPostSummaryItem, {
-        global: { plugins: [i18n] },
+      const wrapper = shallowMountWithPlugins(FeedPostSummaryItem, {
         props: {
           author,
           publicationDate: new Date(),
