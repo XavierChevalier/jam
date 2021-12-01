@@ -20,8 +20,8 @@
 <template>
   <div class="flex justify-between items-center px-5 h-14 bg-white-dark">
     <div
-      v-for="icon in icons"
-      :key="icon"
+      v-for="(icon, iconName) in icons"
+      :key="iconName"
       class="
         flex
         justify-center
