@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "rimraf ./node_modules/@types/react",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "yarn lint:ts && vite build",
     "serve": "vite preview",
     "lint": "eslint --fix --ext .ts,vue --ignore-path .gitignore . && yarn prettier -w -u .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
+    "lint:ts": "vue-tsc --noEmit",
     "test": "jest src",
     "chromatic": "npx chromatic",
     "storybook": "start-storybook -p 6006 --ci",
@@ -79,6 +80,7 @@
     }
   },
   "lint-staged": {
+    "*.{ts,vue}": "yarn lint:ts",
     "*.{js,ts,vue,json}": "eslint --fix",
     "*.{css,scss,vue}": "stylelint --fix",
     "*": "prettier -w -u"
