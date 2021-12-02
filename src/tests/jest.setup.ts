@@ -3,9 +3,16 @@ function isVueWarnForFailedPropTypeCheck(message: string) {
     '[Vue warn]: Invalid prop: type check failed for prop'
   )
 }
+function isVueWarnForMissingRequiredProp(message: string) {
+  return message.startsWith('[Vue warn]: Missing required prop')
+}
 
 const failOnVueWarn = (message: string, args: unknown[]) => {
-  if (isVueWarnForFailedPropTypeCheck(message)) throw new Error(args.join(''))
+  if (
+    isVueWarnForFailedPropTypeCheck(message) ||
+    isVueWarnForMissingRequiredProp(message)
+  )
+    throw new Error(args.join(''))
 }
 
 const warn = console.warn
