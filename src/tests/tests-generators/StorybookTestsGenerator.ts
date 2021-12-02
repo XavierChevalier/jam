@@ -7,6 +7,7 @@ import { omit } from 'lodash-es'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { Story } from '@storybook/vue3'
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
+import { ComponentOptionsWithoutProps } from 'vue'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type AnyComponentOptionsBase = ComponentOptionsBase<
@@ -64,6 +65,10 @@ export class StorybookTestsGenerator {
     })
 
     return this
+  }
+
+  getComponent() {
+    return this.component as ComponentOptionsWithoutProps
   }
 
   private getPropertyDefinition(propertyName: string) {
