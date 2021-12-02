@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "ArtistReleaseAlbum" component story correctly 1`] = `
+exports[`FeedPostShortItem stories snapshots [snapshot] should render the "ArtistReleaseAlbum" component story correctly 1`] = `
 <div
   class="flex gap-3 items-center"
 >
@@ -27,7 +27,7 @@ exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "Art
 </div>
 `;
 
-exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "ArtistReleaseSong" component story correctly 1`] = `
+exports[`FeedPostShortItem stories snapshots [snapshot] should render the "ArtistReleaseSong" component story correctly 1`] = `
 <div
   class="flex gap-3 items-center"
 >
@@ -54,7 +54,7 @@ exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "Art
 </div>
 `;
 
-exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "UserShareAlbum" component story correctly 1`] = `
+exports[`FeedPostShortItem stories snapshots [snapshot] should render the "UserShareAlbum" component story correctly 1`] = `
 <div
   class="flex gap-3 items-center"
 >
@@ -81,7 +81,7 @@ exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "Use
 </div>
 `;
 
-exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "UserSharePlaylist" component story correctly 1`] = `
+exports[`FeedPostShortItem stories snapshots [snapshot] should render the "UserSharePlaylist" component story correctly 1`] = `
 <div
   class="flex gap-3 items-center"
 >
@@ -108,7 +108,7 @@ exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "Use
 </div>
 `;
 
-exports[`FeedPostSummaryItem stories snapshots [snapshot] should render the "UserShareSong" component story correctly 1`] = `
+exports[`FeedPostShortItem stories snapshots [snapshot] should render the "UserShareSong" component story correctly 1`] = `
 <div
   class="flex gap-3 items-center"
 >

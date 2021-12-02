@@ -1,15 +1,15 @@
-import FeedPostSummarySeeMoreButton from './FeedPostSummarySeeMoreButton.vue'
-import * as Stories from '@/app/modules/feed/components/molecules/FeedPostSummarySeeMoreButton.stories'
+import FeedPostShortSeeMoreButton from './FeedPostShortSeeMoreButton.vue'
+import * as Stories from '@/app/modules/feed/components/molecules/FeedPostShortSeeMoreButton.stories'
 import { changeLocale } from '@/plugins/VueI18n'
 import AppIcon from '@/app/components/atoms/AppIcon.vue'
 import { shallowMountWithPlugins } from '@/tests/tools/MountWithPlugins'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
-describe('FeedPostSummarySeeMoreButton', () => {
+describe('FeedPostShortSeeMoreButton', () => {
   StorybookTestsGenerator.fromStoriesExports(Stories).snapshotEachStories()
 
   it('should contains 2 icons', () => {
-    const wrapper = shallowMountWithPlugins(FeedPostSummarySeeMoreButton)
+    const wrapper = shallowMountWithPlugins(FeedPostShortSeeMoreButton)
 
     expect(wrapper.findAllComponents(AppIcon)).toHaveLength(2)
   })
@@ -22,7 +22,7 @@ describe('FeedPostSummarySeeMoreButton', () => {
     'should display a text "$expectedDisplayText" in "$lang"',
     ({ lang, expectedDisplayText }) => {
       changeLocale(lang)
-      const wrapper = shallowMountWithPlugins(FeedPostSummarySeeMoreButton)
+      const wrapper = shallowMountWithPlugins(FeedPostShortSeeMoreButton)
 
       expect(wrapper.text()).toContain(expectedDisplayText)
     }

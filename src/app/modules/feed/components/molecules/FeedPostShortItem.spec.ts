@@ -1,5 +1,5 @@
-import FeedPostSummaryItem from './FeedPostSummaryItem.vue'
-import * as Stories from '@/app/modules/feed/components/molecules/FeedPostSummaryItem.stories'
+import FeedPostShortItem from './FeedPostShortItem.vue'
+import * as Stories from '@/app/modules/feed/components/molecules/FeedPostShortItem.stories'
 import { Author } from '@/app/modules/feed/models/Author'
 import { omit } from 'lodash-es'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
@@ -7,7 +7,7 @@ import { changeLocale } from '@/plugins/VueI18n'
 import { shallowMountWithPlugins } from '@/tests/tools/MountWithPlugins'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 
-describe('FeedPostSummaryItem', () => {
+describe('FeedPostShortItem', () => {
   StorybookTestsGenerator.fromStoriesExports(Stories)
     .snapshotEachStories()
     .property<Author>('author', (property) => {
@@ -55,7 +55,7 @@ describe('FeedPostSummaryItem', () => {
     'should display "$expectedDisplayText" on "$postType" postType',
     ({ postType, lang, expectedDisplayText }) => {
       changeLocale(lang)
-      const wrapper = shallowMountWithPlugins(FeedPostSummaryItem, {
+      const wrapper = shallowMountWithPlugins(FeedPostShortItem, {
         props: {
           author: { name: 'John Gomm', avatar: 'https://picsum.photos/50' },
           publicationDate: new Date(),

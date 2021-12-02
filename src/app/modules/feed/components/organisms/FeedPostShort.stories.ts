@@ -1,27 +1,27 @@
-import FeedPostSummary from './FeedPostSummary.vue'
-import FeedPostSummaryItem from '../molecules/FeedPostSummaryItem.vue'
+import FeedPostShort from './FeedPostShort.vue'
+import FeedPostShortItem from '../molecules/FeedPostShortItem.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
 import { omit } from 'lodash-es'
 
 export default {
-  title: 'Organisms/Feed/FeedPostSummary',
-  component: FeedPostSummary,
+  title: 'Organisms/Feed/FeedPostShort',
+  component: FeedPostShort,
   parameters: {
     viewport: { defaultViewport: 'iphone6' },
   },
 } as Meta
 
 const Template: Story = (args) => ({
-  components: { FeedPostSummary, FeedPostSummaryItem },
+  components: { FeedPostShort, FeedPostShortItem },
   setup() {
     return { args, omit }
   },
   template: `
-    <FeedPostSummary v-bind="omit(args, ['feedSummaryItems'])">
-      <FeedPostSummaryItem v-for="feedSummary in args.feedSummaryItems" v-bind="feedSummary" />
-    </FeedPostSummary>
+    <FeedPostShort v-bind="omit(args, ['feedShortItems'])">
+      <FeedPostShortItem v-for="feedShort in args.feedShortItems" v-bind="feedShort" />
+    </FeedPostShort>
   `,
 })
 
@@ -33,7 +33,7 @@ threeDaysBefore.setDate(threeDaysBefore.getDate() - 3)
 
 export const With3Items = Template.bind({})
 With3Items.args = {
-  feedSummaryItems: [
+  feedShortItems: [
     {
       publicationDate: now,
       postType: AvailableFeedPostType.userShareSong,

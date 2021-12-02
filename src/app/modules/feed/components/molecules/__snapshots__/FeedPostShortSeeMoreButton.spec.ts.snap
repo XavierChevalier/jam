@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeedPostSummarySeeMoreButton stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
+exports[`FeedPostShortSeeMoreButton stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
 <div
   class="text-neutral text-center"
 >

@@ -1,22 +1,22 @@
-import FeedPostSummaryItem from './FeedPostSummaryItem.vue'
+import FeedPostShortItem from './FeedPostShortItem.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
 
 export default {
-  title: 'Molecules/Feed/FeedPostSummaryItem',
-  component: FeedPostSummaryItem,
+  title: 'Molecules/Feed/FeedPostShortItem',
+  component: FeedPostShortItem,
   parameters: {
     viewport: { defaultViewport: 'iphone6' },
   },
 } as Meta
 
 const Template: Story = (args) => ({
-  components: { FeedPostSummaryItem },
+  components: { FeedPostShortItem },
   setup() {
     return { args }
   },
-  template: '<FeedPostSummaryItem v-bind="args" />',
+  template: '<FeedPostShortItem v-bind="args" />',
 })
 const commonProps = {
   publicationDate: new Date(),
