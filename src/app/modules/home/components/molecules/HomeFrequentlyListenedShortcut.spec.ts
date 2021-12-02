@@ -1,8 +1,8 @@
-import * as Stories from '@/app/modules/home/components/molecules/HomeShortcut.stories'
+import * as Stories from '@/app/modules/home/components/molecules/HomeFrequentlyListenedShortcut.stories'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 import { shallowMount } from '@vue/test-utils'
 
-describe('HomeShortcut', () => {
+describe('HomeFrequentlyListenedShortcut', () => {
   const component = StorybookTestsGenerator.fromStoriesExports(Stories)
     .snapshotEachStories()
     .property<string>('imageUrl', (property) => {

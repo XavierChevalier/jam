@@ -1,22 +1,22 @@
-import HomeShortcut from './HomeShortcut.vue'
+import HomeFrequentlyListenedShortcut from './HomeFrequentlyListenedShortcut.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { omit } from 'lodash-es'
 
 export default {
-  title: 'Molecules/Home/HomeShortcut',
-  component: HomeShortcut,
+  title: 'Molecules/Home/HomeFrequentlyListenedShortcut',
+  component: HomeFrequentlyListenedShortcut,
   parameters: {
     viewport: { defaultViewport: 'iphone6' },
   },
 } as Meta
 
 const Template: Story = (args) => ({
-  components: { HomeShortcut },
+  components: { HomeFrequentlyListenedShortcut },
   setup() {
     return { args: omit(args, ['slots']), slots: args.slots }
   },
-  template: `<HomeShortcut v-bind="args">{{ slots.default }}</HomeShortcut>`,
+  template: `<HomeFrequentlyListenedShortcut v-bind="args">{{ slots.default }}</HomeFrequentlyListenedShortcut>`,
 })
 
 export const Default = Template.bind({})

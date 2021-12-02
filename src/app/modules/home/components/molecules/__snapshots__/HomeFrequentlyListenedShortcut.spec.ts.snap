@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HomeShortcut stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
+exports[`HomeFrequentlyListenedShortcut stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
 <div
   class="flex items-center bg-white rounded"
 >
