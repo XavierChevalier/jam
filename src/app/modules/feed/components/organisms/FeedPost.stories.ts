@@ -2,6 +2,7 @@ import FeedPost from './FeedPost.vue'
 import FeedTrack from '@/app/modules/feed/components/molecules/FeedTrack.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
+import { OneBand } from '@/app/modules/feed/components/molecules/FeedTrack.stories'
 
 export default {
   title: 'Organisms/Feed/FeedPost',
@@ -34,15 +35,8 @@ export const WithTrack: Story = (args) => ({
   },
   template: `
     <FeedPost v-bind="args">
-    <FeedTrack
-      :track="{
-        title: 'G.O.A.T.',
-        bands: ['Polyphia'],
-        durationMs: 150_000,
-        cover: 'https://picsum.photos/50?1'
-      }"
-    />
+      <FeedTrack :track="args.track" />
     </FeedPost>
   `,
 })
-WithTrack.args = { ...Default.args }
+WithTrack.args = { ...Default.args, track: OneBand.args?.track }

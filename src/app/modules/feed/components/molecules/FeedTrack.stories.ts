@@ -8,14 +8,14 @@ export default {
   component: FeedTrack,
 } as Meta
 
-export const Default: Story = (args) => ({
+export const OneBand: Story = (args) => ({
   components: { FeedTrack },
   setup() {
     return { args }
   },
   template: '<FeedTrack v-bind="args" />',
 })
-Default.args = {
+OneBand.args = {
   track: {
     cover: 'https://picsum.photos/50',
     title: 'G.O.A.T.',

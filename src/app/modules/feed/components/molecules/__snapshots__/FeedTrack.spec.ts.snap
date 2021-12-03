@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FeedTrack stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
+exports[`FeedTrack stories snapshots [snapshot] should render the "OneBand" component story correctly 1`] = `
 <div
   class="bg-white-dark rounded p-2 flex"
 >
