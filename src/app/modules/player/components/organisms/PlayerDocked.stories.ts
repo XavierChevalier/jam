@@ -1,6 +1,7 @@
 import PlayerDocked from './PlayerDocked.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 export default {
   title: 'Organisms/Player/PlayerDocked',
@@ -16,7 +17,7 @@ const Template: Story = (args) => ({
 })
 
 const track = {
-  cover: 'https://picsum.photos/50',
+  cover: generateImageUrl(),
   title: 'ANSI.SYS',
   bands: ['MASTER BOOT RECORD'],
   durationMs: 186_000,

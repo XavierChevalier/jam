@@ -1,5 +1,6 @@
 import * as Stories from './AppAvatar.stories'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 describe('AppAvatar', () => {
   StorybookTestsGenerator.fromStoriesExports(Stories)
@@ -8,7 +9,7 @@ describe('AppAvatar', () => {
       property
         .itShouldBeDefined()
         .itShouldHaveAValidatorFunction()
-        .itShouldSuccessWith('https://picsum.photos/50')
+        .itShouldSuccessWith(generateImageUrl())
         .itShouldFailWith('empty string', '')
         .itShouldFailWith('null', null)
     })

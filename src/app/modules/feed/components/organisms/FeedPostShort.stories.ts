@@ -4,6 +4,7 @@ import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
 import { omit } from 'lodash-es'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 export default {
   title: 'Organisms/Feed/FeedPostShort',
@@ -39,7 +40,7 @@ With3Items.args = {
       postType: AvailableFeedPostType.userShareSong,
       author: {
         name: 'TheBaronless',
-        avatar: 'https://picsum.photos/50',
+        avatar: generateImageUrl(),
       },
     },
     {
@@ -47,7 +48,7 @@ With3Items.args = {
       postType: AvailableFeedPostType.artistReleaseAlbum,
       author: {
         name: 'John Gomm',
-        avatar: 'https://picsum.photos/50?1',
+        avatar: `${generateImageUrl()}?1`,
       },
     },
     {
@@ -55,7 +56,7 @@ With3Items.args = {
       postType: AvailableFeedPostType.userSharePlaylist,
       author: {
         name: 'John Gomm',
-        avatar: 'https://picsum.photos/50?2',
+        avatar: `${generateImageUrl()}?2`,
       },
     },
   ],

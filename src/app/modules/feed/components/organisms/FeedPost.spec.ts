@@ -2,12 +2,13 @@ import * as Stories from '@/app/modules/feed/components/organisms/FeedPost.stori
 import { Author } from '@/app/modules/feed/models/Author'
 import { omit } from 'lodash-es'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 describe('FeedPost', () => {
   StorybookTestsGenerator.fromStoriesExports(Stories).property<Author>(
     'author',
     (property) => {
-      const author = { name: 'Test', avatar: 'https://picsum.photos/50' }
+      const author = { name: 'Test', avatar: generateImageUrl() }
       property
         .itShouldBeDefined()
         .itShouldHaveAValidatorFunction()

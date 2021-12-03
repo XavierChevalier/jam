@@ -1,6 +1,7 @@
 import * as Stories from '@/app/modules/home/components/molecules/HomeFrequentlyListenedShortcut.stories'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
 import { shallowMount } from '@vue/test-utils'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 describe('HomeFrequentlyListenedShortcut', () => {
   const component = StorybookTestsGenerator.fromStoriesExports(Stories)
@@ -11,7 +12,7 @@ describe('HomeFrequentlyListenedShortcut', () => {
         .itShouldBeTypeOf(String)
         .itShouldBeRequired()
         .itShouldHaveAValidatorFunction()
-        .itShouldSuccessWith('https://picsum.photos/50')
+        .itShouldSuccessWith(generateImageUrl())
         .itShouldFailWith('empty string', '')
         .itShouldFailWith('null', null)
     })
@@ -21,7 +22,7 @@ describe('HomeFrequentlyListenedShortcut', () => {
     const slotContent = 'Titres likés'
     const wrapper = shallowMount(component, {
       props: {
-        imageUrl: 'https://picsum.photos/50',
+        imageUrl: generateImageUrl(),
       },
       slots: {
         default: slotContent,

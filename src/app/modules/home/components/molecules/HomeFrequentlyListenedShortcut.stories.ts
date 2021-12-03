@@ -2,6 +2,7 @@ import HomeFrequentlyListenedShortcut from './HomeFrequentlyListenedShortcut.vue
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { omit } from 'lodash-es'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 export default {
   title: 'Molecules/Home/HomeFrequentlyListenedShortcut',
@@ -21,7 +22,7 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-  imageUrl: 'https://picsum.photos/50',
+  imageUrl: generateImageUrl(),
   slots: {
     default: 'Liked songs',
   },

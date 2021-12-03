@@ -3,6 +3,7 @@ import FeedTrack from '@/app/modules/feed/components/molecules/FeedTrack.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { OneBand } from '@/app/modules/feed/components/molecules/FeedTrack.stories'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 export default {
   title: 'Organisms/Feed/FeedPost',
@@ -19,7 +20,7 @@ export const Default: Story = (args) => ({
 Default.args = {
   author: {
     name: 'TheBaronless',
-    avatar: 'https://picsum.photos/50',
+    avatar: generateImageUrl(),
   },
   content:
     "Salut à tous, j'ai découvert un groupe complètement ouf, dites-moi ce que vous en pensez !",

@@ -2,6 +2,7 @@ import FeedPostShortItem from './FeedPostShortItem.vue'
 import { Story } from '@storybook/vue3'
 import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
 import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 export default {
   title: 'Molecules/Feed/FeedPostShortItem',
@@ -22,7 +23,7 @@ const commonProps = {
   publicationDate: new Date(),
   author: {
     name: 'TheBaronless',
-    avatar: 'https://picsum.photos/50',
+    avatar: generateImageUrl(),
   },
 }
 

@@ -2,13 +2,14 @@ import * as Stories from '@/app/modules/feed/components/molecules/FeedTrack.stor
 import { Track } from '@/app/modules/track/models/Track'
 import { omit } from 'lodash-es'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 describe('FeedTrack', () => {
   StorybookTestsGenerator.fromStoriesExports(Stories)
     .snapshotEachStories()
     .property<Track>('track', (property) => {
       const track = {
-        cover: 'https://picsum.photos/50',
+        cover: generateImageUrl(),
         title: 'G.O.A.T.',
         bands: ['Polyphia'],
         durationMs: 125_000,

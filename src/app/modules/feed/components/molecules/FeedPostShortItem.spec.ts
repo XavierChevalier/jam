@@ -6,12 +6,13 @@ import { AvailableFeedPostType } from '@/app/modules/feed/models/FeedPostType'
 import { changeLocale } from '@/plugins/VueI18n'
 import { shallowMountWithPlugins } from '@/tests/tools/MountWithPlugins'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 describe('FeedPostShortItem', () => {
   StorybookTestsGenerator.fromStoriesExports(Stories)
     .snapshotEachStories()
     .property<Author>('author', (property) => {
-      const author = { name: 'John Gomm', avatar: 'https://picsum.photos/50' }
+      const author = { name: 'John Gomm', avatar: generateImageUrl() }
       property
         .itShouldBeDefined()
         .itShouldBeRequired()
@@ -57,7 +58,7 @@ describe('FeedPostShortItem', () => {
       changeLocale(lang)
       const wrapper = shallowMountWithPlugins(FeedPostShortItem, {
         props: {
-          author: { name: 'John Gomm', avatar: 'https://picsum.photos/50' },
+          author: { name: 'John Gomm', avatar: generateImageUrl() },
           publicationDate: new Date(),
           postType,
         },

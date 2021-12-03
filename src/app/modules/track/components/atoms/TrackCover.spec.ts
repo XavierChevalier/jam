@@ -2,13 +2,14 @@ import * as Stories from '@/app/modules/track/components/atoms/TrackCover.storie
 import { TrackOfTrackCover } from '@/app/modules/track/models/TrackCover'
 import { omit } from 'lodash-es'
 import { StorybookTestsGenerator } from '@/tests/tests-generators/StorybookTestsGenerator'
+import { generateImageUrl } from '@/app/tools/Faker'
 
 describe('TrackCover', () => {
   StorybookTestsGenerator.fromStoriesExports(Stories)
     .snapshotEachStories()
     .property<TrackOfTrackCover>('track', (property) => {
       const track = {
-        cover: 'https://picsum.photos/50',
+        cover: generateImageUrl(),
         title: 'G.O.A.T.',
         bands: ['Polyphia'],
       }
