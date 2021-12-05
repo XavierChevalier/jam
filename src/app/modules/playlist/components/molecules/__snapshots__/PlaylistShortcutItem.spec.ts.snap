@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaylistShortcutItem stories snapshots [snapshot] should render the "Album" component story correctly 1`] = `
+<div
+  class="flex flex-col max-w-[160px]"
+>
+  <img
+    alt="Cover of Polyphia"
+    class="rounded"
+    src="https://picsum.photos/160"
+  />
+  <span
+    class="font-bold mt-2"
+  >
+    Polyphia
+  </span>
+  <span
+    class="text-sm"
+  >
+    New levels new devils
+  </span>
+</div>
+`;
