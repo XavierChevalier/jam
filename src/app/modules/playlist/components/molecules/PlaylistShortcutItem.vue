@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col max-w-[160px]">
+  <div class="flex flex-col min-w-[150px] w-[150px]">
     <img class="rounded" :src="cover" :alt="`Cover of ${title}`" />
     <span class="font-bold mt-2">{{ title }}</span>
     <span class="text-sm">{{ description }}</span>
