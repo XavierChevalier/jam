@@ -1,7 +1,6 @@
 import FeedPost from './FeedPost.vue'
 import FeedTrack from '@/app/modules/feed/components/molecules/FeedTrack.vue'
-import { Story } from '@storybook/vue3'
-import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
+import { Meta, Story } from '@storybook/vue3'
 import { OneBand } from '@/app/modules/feed/components/molecules/FeedTrack.stories'
 import { generateImageUrl } from '@/app/tools/Faker'
 

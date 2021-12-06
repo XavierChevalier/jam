@@ -1,6 +1,5 @@
 import PlaylistShortcutItem from './PlaylistShortcutItem.vue'
-import { Story } from '@storybook/vue3'
-import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
+import { Meta, Story } from '@storybook/vue3'
 import { generateImageUrl } from '@/app/tools/Faker'
 
 export default {

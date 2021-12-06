@@ -1,6 +1,5 @@
 import NavigationBar from './NavigationBar.vue'
-import { Story } from '@storybook/vue3'
-import { Meta } from '@storybook/vue3/dist/ts3.9/client/preview/types-6-0'
+import { Meta, Story } from '@storybook/vue3'
 
 export default {
   title: 'Molecules/Navigation/NavigationBar',
