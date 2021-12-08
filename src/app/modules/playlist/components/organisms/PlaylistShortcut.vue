@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import VueHorizontal from 'vue-horizontal'
+  import VueHorizontal, { VueHorizontalData } from 'vue-horizontal'
   import { ref } from 'vue'
   import { mdiChevronLeft, mdiChevronRight } from '@mdi/js'
   import AppIcon from '@/app/components/atoms/AppIcon.vue'
@@ -11,7 +11,13 @@
     },
   })
 
-  const horizontalList = ref<InstanceType<typeof VueHorizontal> | null>(null)
+  const horizontalList = ref<InstanceType<typeof VueHorizontal>>()
+  const hasPrev = ref(false)
+  const hasNext = ref(true)
+  const onScroll = (horizontalScroll: VueHorizontalData) => {
+    hasPrev.value = horizontalScroll.hasPrev
+    hasNext.value = horizontalScroll.hasNext
+  }
 </script>
 
 <template>
@@ -22,14 +28,16 @@
       <nav>
         <button
           data-test="navigationPrev"
-          :class="{ active: hasPrev, inactive: !hasPrev }"
+          class="transition-colors"
+          :class="{ inactive: !hasPrev }"
           @click="horizontalList.prev"
         >
           <AppIcon :path="mdiChevronLeft" />
         </button>
         <button
           data-test="navigationNext"
-          :class="{ active: hasNext, inactive: !hasNext }"
+          class="transition-colors"
+          :class="{ inactive: !hasNext }"
           @click="horizontalList.next"
         >
           <AppIcon :path="mdiChevronRight" />
@@ -37,7 +45,11 @@
       </nav>
     </header>
 
-    <VueHorizontal ref="horizontalList" :button="false">
+    <VueHorizontal
+      ref="horizontalList"
+      :button="false"
+      @scroll-debounce="onScroll"
+    >
       <slot />
     </VueHorizontal>
   </div>
@@ -46,5 +58,9 @@
 <style scoped lang="scss">
   ::v-deep(.v-hl-container) {
     @apply gap-3;
+  }
+
+  .inactive {
+    @apply text-neutral-light;
   }
 </style>
