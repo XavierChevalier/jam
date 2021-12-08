@@ -20,7 +20,7 @@
     <header class="flex justify-between items-center">
       <h2 class="text-xl font-bold">{{ title }}</h2>
 
-      <nav>
+      <nav class="hidden sm:block">
         <button
           data-test="navigationPrev"
           class="transition-colors"
