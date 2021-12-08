@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <div class="flex items-center bg-white rounded">
+  <div class="flex items-center bg-white rounded pr-2">
     <img class="rounded" :src="imageUrl" alt="Song or album image" />
     <span class="ml-3">
       <slot />
