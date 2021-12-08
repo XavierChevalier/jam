@@ -10,7 +10,7 @@ exports[`FeedTrack stories snapshots [snapshot] should render the "OneBand" comp
     src="https://picsum.photos/50"
   />
   <div
-    class="flex flex-col ml-2 leading-tight justify-center"
+    class="flex flex-col ml-2 justify-center"
   >
     <span
       class="font-bold"

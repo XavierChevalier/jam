@@ -18,7 +18,7 @@
 <template>
   <div class="flex flex-col gap-2">
     <header class="flex justify-between items-center">
-      <h2 class="text-xl font-bold">{{ title }}</h2>
+      <h2 class="text-lg font-bold">{{ title }}</h2>
 
       <nav class="hidden sm:block">
         <button

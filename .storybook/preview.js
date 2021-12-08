@@ -47,6 +47,6 @@ export const parameters = {
 export const decorators = [
   (story) => ({
     components: { story },
-    template: '<story class="leading-tight" />',
+    template: '<story class="text-base" />',
   }),
 ]

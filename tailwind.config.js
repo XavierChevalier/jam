@@ -6,7 +6,7 @@ const {
 
 module.exports = {
   mode: 'jit',
-  purge: ['./index.html', './src/**/*.{vue,js,ts}'],
+  purge: ['./index.html', './src/**/*.{vue,js,ts}', './.storybook/*.{js,html}'],
   darkMode: 'class',
   fontFamily: {
     ...fontFamily,
@@ -17,6 +17,14 @@ module.exports = {
       width: {
         4.5: '1.065rem',
       },
+    },
+    fontSize: {
+      xs: ['12px', { lineHeight: '14px' }],
+      sm: ['14px', { lineHeight: '16px' }],
+      base: ['16px', { lineHeight: '20px' }],
+      lg: ['20px', { lineHeight: '24px' }],
+      xl: ['26px', { lineHeight: '30px' }],
+      '2xl': ['80px', { lineHeight: '100px' }],
     },
     colors: {
       neutral: {
