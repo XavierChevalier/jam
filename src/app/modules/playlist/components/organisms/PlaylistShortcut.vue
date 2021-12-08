@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import VueHorizontal, { VueHorizontalData } from 'vue-horizontal'
-  import { ref } from 'vue'
+  import VueHorizontal from 'vue-horizontal'
   import { mdiChevronLeft, mdiChevronRight } from '@mdi/js'
   import AppIcon from '@/app/components/atoms/AppIcon.vue'
+  import { useVueHorizontalScroll } from '@/app/composable/VueHorizontalScroll'
 
   defineProps({
     title: {
@@ -11,13 +11,8 @@
     },
   })
 
-  const horizontalList = ref<InstanceType<typeof VueHorizontal>>()
-  const hasPrev = ref(false)
-  const hasNext = ref(true)
-  const onScroll = (horizontalScroll: VueHorizontalData) => {
-    hasPrev.value = horizontalScroll.hasPrev
-    hasNext.value = horizontalScroll.hasNext
-  }
+  const { horizontalTemplateRef, prev, next, hasPrev, hasNext, onScroll } =
+    useVueHorizontalScroll()
 </script>
 
 <template>
@@ -30,7 +25,7 @@
           data-test="navigationPrev"
           class="transition-colors"
           :class="{ inactive: !hasPrev }"
-          @click="horizontalList.prev"
+          @click="prev"
         >
           <AppIcon :path="mdiChevronLeft" />
         </button>
@@ -38,7 +33,7 @@
           data-test="navigationNext"
           class="transition-colors"
           :class="{ inactive: !hasNext }"
-          @click="horizontalList.next"
+          @click="next"
         >
           <AppIcon :path="mdiChevronRight" />
         </button>
@@ -46,7 +41,7 @@
     </header>
 
     <VueHorizontal
-      ref="horizontalList"
+      ref="horizontalTemplateRef"
       :button="false"
       @scroll-debounce="onScroll"
     >

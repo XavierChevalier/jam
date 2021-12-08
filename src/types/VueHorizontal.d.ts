@@ -22,8 +22,8 @@ declare module 'vue-horizontal' {
       snap: { type: String, default: () => 'start' },
     },
     methods: {
-      prev(): void {},
-      next(): void {},
+      prev(event: PointerEvent): void {},
+      next(event: PointerEvent): void {},
       onScrollDebounce(): void {},
       /**
        * Index of the slots to scroll to.
