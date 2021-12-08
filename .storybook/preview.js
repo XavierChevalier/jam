@@ -2,8 +2,8 @@
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import tailwindcss from '../tailwind.config'
 import './../src/assets/styles/index.scss'
-import { app } from '@storybook/vue3';
-import { i18n } from '../src/plugins/VueI18n';
+import { app } from '@storybook/vue3'
+import { i18n } from '../src/plugins/VueI18n'
 
 app.use(i18n)
 
@@ -28,7 +28,7 @@ export const parameters = {
         name: 'Desktop',
         styles: {
           height: '1080px',
-          width: '1920px'
+          width: '1920px',
         },
         type: 'desktop',
       },
