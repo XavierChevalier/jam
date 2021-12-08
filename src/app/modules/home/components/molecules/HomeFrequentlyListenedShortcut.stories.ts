@@ -6,9 +6,6 @@ import { generateImageUrl } from '@/app/tools/Faker'
 export default {
   title: 'Molecules/Home/HomeFrequentlyListenedShortcut',
   component: HomeFrequentlyListenedShortcut,
-  parameters: {
-    viewport: { defaultViewport: 'iphone6' },
-  },
 } as Meta
 
 const Template: Story = (args) => ({

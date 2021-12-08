@@ -8,9 +8,6 @@ import { generateImageUrl } from '@/app/tools/Faker'
 export default {
   title: 'Organisms/Feed/FeedPostShort',
   component: FeedPostShort,
-  parameters: {
-    viewport: { defaultViewport: 'iphone6' },
-  },
 } as Meta
 
 const Template: Story = (args) => ({

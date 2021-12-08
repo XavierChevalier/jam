@@ -5,9 +5,6 @@ import { generateImageUrl } from '@/app/tools/Faker'
 export default {
   title: 'Molecules/Playlist/PlaylistShortcutItem',
   component: PlaylistShortcutItem,
-  parameters: {
-    viewport: { defaultViewport: 'iphone6' },
-  },
 } as Meta
 
 const Template: Story = (args) => ({

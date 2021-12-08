@@ -1,5 +1,5 @@
 // noinspection NpmUsedModulesInstalled
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import tailwindcss from '../tailwind.config'
 import './../src/assets/styles/index.scss'
 import { app } from '@storybook/vue3';
@@ -21,7 +21,18 @@ export const parameters = {
     },
   },
   viewport: {
-    viewports: INITIAL_VIEWPORTS,
+    defaultViewport: 'mobile2',
+    viewports: {
+      ...MINIMAL_VIEWPORTS,
+      desktop: {
+        name: 'Desktop',
+        styles: {
+          height: '1080px',
+          width: '1920px'
+        },
+        type: 'desktop',
+      },
+    },
   },
   backgrounds: {
     default: 'light',

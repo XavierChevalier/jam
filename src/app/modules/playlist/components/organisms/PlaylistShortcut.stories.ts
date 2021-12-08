@@ -8,9 +8,6 @@ export default {
   title: 'Organisms/Playlist/PlaylistShortcut',
   component: PlaylistShortcut,
   subcomponents: { PlaylistShortcutItem },
-  parameters: {
-    viewport: { defaultViewport: 'iphone6' },
-  },
 } as Meta
 
 const Template: Story = (args) => ({
@@ -25,8 +22,12 @@ const Template: Story = (args) => ({
   `,
 })
 
-export const Albums = Template.bind({})
-Albums.args = {
+export const FavoriteSongs = Template.bind({})
+FavoriteSongs.args = {
   title: 'Vos titres préférés',
-  items: [...Array(6)].map(() => Album.args),
+  items: [...Array(10)].map(() => Album.args),
 }
+
+export const LgFavoriteSongs = Template.bind({})
+LgFavoriteSongs.args = FavoriteSongs.args
+LgFavoriteSongs.parameters = { viewport: { defaultViewport: 'reset' } }

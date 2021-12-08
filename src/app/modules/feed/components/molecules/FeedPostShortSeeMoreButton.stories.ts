@@ -5,9 +5,6 @@ import { omit } from 'lodash-es'
 export default {
   title: 'Molecules/Feed/FeedPostShortSeeMoreButton',
   component: FeedPostShortSeeMoreButton,
-  parameters: {
-    viewport: { defaultViewport: 'iphone6' },
-  },
 } as Meta
 
 const Template: Story = (args) => ({

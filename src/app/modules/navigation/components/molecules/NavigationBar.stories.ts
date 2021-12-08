@@ -6,7 +6,6 @@ export default {
   component: NavigationBar,
   parameters: {
     backgrounds: { default: 'true-white' },
-    viewport: { defaultViewport: 'iphone6' },
   },
 } as Meta
 
