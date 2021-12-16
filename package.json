@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "UNLICENSED",
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite",
     "prebuild": "rimraf ./node_modules/@types/react",
     "build": "yarn lint:ts && vite build",
@@ -75,13 +76,11 @@
     "vue-loader": "^16.8.3",
     "vue-tsc": "^0.3.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.{ts,vue}": "yarn lint:ts",
+    "*.{ts,vue}": [
+      "yarn lint:ts",
+      "eslint --cache --fix"
+    ],
     "*.{js,ts,vue,json}": "eslint --fix",
     "*.{css,scss,vue}": "stylelint --fix",
     "*": "prettier -w -u"
