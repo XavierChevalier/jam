@@ -10,7 +10,7 @@
     "serve": "vite preview",
     "lint": "eslint --fix --ext .ts,vue --ignore-path .gitignore . && yarn prettier -w -u .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
-    "lint:ts": "vue-tsc --noEmit",
+    "lint:ts": "yarn prebuild && vue-tsc --noEmit",
     "test": "jest src",
     "chromatic": "npx chromatic",
     "storybook": "start-storybook -p 6006 --ci",
@@ -77,11 +77,7 @@
     "vue-tsc": "^0.3.0"
   },
   "lint-staged": {
-    "*.{ts,vue}": [
-      "yarn lint:ts",
-      "eslint --cache --fix"
-    ],
-    "*.{js,ts,vue,json}": "eslint --fix",
+    "*.{js,ts,vue,json}": "eslint --cache --fix",
     "*.{css,scss,vue}": "stylelint --fix",
     "*": "prettier -w -u"
   }

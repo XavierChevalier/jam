@@ -5,7 +5,6 @@ import PlaylistShortcutItem from '@/app/modules/playlist/components/molecules/Pl
 import { h } from 'vue'
 import { Album } from '@/app/modules/playlist/components/molecules/PlaylistShortcutItem.stories'
 import VueHorizontal from 'vue-horizontal'
-import PlaylistShortcut from '@/app/modules/playlist/components/organisms/PlaylistShortcut.vue'
 
 describe('PlaylistShortcut', () => {
   const component = StorybookTestsGenerator.fromStoriesExports(Stories)
@@ -20,7 +19,7 @@ describe('PlaylistShortcut', () => {
       default: {
         render: () =>
           [...Array(numberOfItems)].map(() =>
-            h(PlaylistShortcutItem, Album.args)
+            h(PlaylistShortcutItem as never, Album.args)
           ),
       },
     },
@@ -42,7 +41,7 @@ describe('PlaylistShortcut', () => {
   })
 
   describe('horizontal navigation', () => {
-    let wrapper: VueWrapper<typeof PlaylistShortcut>
+    let wrapper: VueWrapper<typeof component>
     beforeEach(() => {
       wrapper = shallowMount(component, getComponentOptions(10))
     })

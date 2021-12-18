@@ -10,8 +10,10 @@ export function useVueHorizontalScroll() {
     horizontalTemplateRef,
     hasPrev,
     hasNext,
-    prev: (event: PointerEvent) => horizontalTemplateRef.value?.prev(event),
-    next: (event: PointerEvent) => horizontalTemplateRef.value?.next(event),
+    prev: (event: PointerEvent | MouseEvent) =>
+      horizontalTemplateRef.value?.prev(event as PointerEvent),
+    next: (event: PointerEvent | MouseEvent) =>
+      horizontalTemplateRef.value?.next(event as PointerEvent),
     onScroll(horizontalScroll: VueHorizontalData) {
       hasPrev.value = horizontalScroll.hasPrev
       hasNext.value = horizontalScroll.hasNext

@@ -2,11 +2,13 @@ import {
   PropertyTestsGenerator,
   PropOptions,
 } from '@/tests/tests-generators/ComponentPropertyTestsGenerator'
-import { ComponentOptionsBase } from '@vue/runtime-core'
+import {
+  ComponentOptionsBase,
+  ComponentPublicInstance,
+} from '@vue/runtime-core'
 import { omit } from 'lodash-es'
 import { Meta, Story } from '@storybook/vue3'
 import { generateStorybookSnapshotTests } from '@/tests/tools/StorybookSnapshot'
-import { ComponentOptionsWithoutProps } from 'vue'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type AnyComponentOptionsBase = ComponentOptionsBase<
@@ -67,7 +69,7 @@ export class StorybookTestsGenerator {
   }
 
   getComponent() {
-    return this.component as ComponentOptionsWithoutProps
+    return this.component as ComponentPublicInstance
   }
 
   private getPropertyDefinition(propertyName: string) {

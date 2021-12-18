@@ -12,6 +12,7 @@ node_modules
 # Cache
 .DS_Store
 .firebase/*.cache
+.eslintcache
 
 # Logs
 yarn-error.log
