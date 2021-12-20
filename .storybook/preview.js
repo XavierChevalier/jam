@@ -10,7 +10,14 @@ app.use(i18n)
 export const parameters = {
   options: {
     storySort: {
-      order: ['Pages', 'Templates', 'Organisms', 'Molecules', 'Atoms'],
+      order: [
+        'Layouts',
+        'Pages',
+        'Templates',
+        'Organisms',
+        'Molecules',
+        'Atoms',
+      ],
     },
   },
   actions: { argTypesRegex: '^on[A-Z].*' },

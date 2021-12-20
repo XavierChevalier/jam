@@ -2,7 +2,7 @@
 
 exports[`NavigationBar stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
 <div
-  class="flex justify-between items-center px-5 h-14 bg-white-dark"
+  class="flex justify-between items-center px-5 h-14 bg-white"
 >
   
   <div

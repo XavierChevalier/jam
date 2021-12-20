@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutDefault stories snapshots [snapshot] should render the "Default" component story correctly 1`] = `
+<div
+  class="p-2"
+>
+  
+  <div
+    class="flex flex-col gap-5"
+  >
+    <anonymous-stub />
+    <anonymous-stub />
+    <anonymous-stub
+      title="Vos mix préférés"
+    />
+    <anonymous-stub
+      title="Écoutés récemment"
+    />
+  </div>
+  
+</div>
+`;

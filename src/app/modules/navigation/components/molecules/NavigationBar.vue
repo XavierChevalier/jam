@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <div class="flex justify-between items-center px-5 h-14 bg-white-dark">
+  <div class="flex justify-between items-center px-5 h-14 bg-white">
     <div
       v-for="(icon, iconName) in icons"
       :key="iconName"
